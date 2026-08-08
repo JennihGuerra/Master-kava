@@ -1,0 +1,1005 @@
+/* ============================================================
+   KÁVA — Hoja de estilos (Entregable 5: Bootstrap y pseudoclases)
+   Mobile-first: todo el CSS es la versión mobile por defecto;
+   las media queries (al final del archivo) solo agregan lo
+   necesario para tablet y escritorio.
+   Bootstrap se carga por CDN en el HTML, ANTES que este archivo,
+   así que las reglas de acá abajo tienen prioridad y son las que
+   le dan la identidad visual de Káva a sus componentes.
+   Alcance: Módulos 1 a 5. Sin animaciones ni JS propio.
+   ============================================================ */
+
+/* ===== 0. Reset universal (Módulo 3: Box Model) =====
+   Cada navegador trae su propio margin/padding por defecto para
+   h1, p, ul, form, etc. Los eliminamos todos de una sola vez acá
+   arriba para partir "en cero" y controlar nosotros, a propósito,
+   todo el espaciado del sitio con margin, padding y gap. */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== 1. Variables globales: paleta de colores =====
+   Mínimo 3 colores pedidos por la consigna: primario, secundario
+   y acento. Todos en HEX (nunca "red"/"blue"). */
+:root {
+  --color-primary: #3b2415;            /* Espresso 800 — color de marca, del logo */
+  --color-secondary: #afcba0;          /* Sage 300 — verde suave del Design System */
+  --color-accent: #2f5c3b;             /* Sage 700 — acento (botones, foco) */
+  --color-accent-terracotta: #8a3f1c;  /* Terracotta 700 — acento secundario */
+  --color-background: #fcf8f1;         /* Cream 50 (Figma) — fondo del sitio */
+  --color-bg-inverse: #241407;         /* bg/inverse (Figma) — fondo del footer */
+
+  --color-text: #3b2415;               /* Texto principal sobre fondo claro */
+  --color-text-muted: #786e5c;         /* Texto secundario / bordes suaves */
+  --color-text-inverse: #fcf8f1;       /* Texto sobre fondos oscuros (hero, botones, footer) */
+
+  /* Figma: colores de los badges de producto */
+  --color-accent-gold: #c6992b;
+  --color-bg-surface-alt: #f6eee0;
+  --color-text-secondary: #665c4c;
+  --color-feedback-success-bg: #e1f0e6;
+  --color-feedback-success-text: #295c3e;
+  --color-feedback-error-bg: #f8e2df;
+  --color-feedback-error-text: #84271f;
+  --color-feedback-warning-bg: #f7ebd3;
+  --color-feedback-warning-text: #8f5f10;
+  --color-feedback-info-bg: #e1ebef;
+  --color-feedback-info-text: #284a5c;
+
+  /* Figma: tarjeta del formulario de contacto */
+  --color-border-default: #e2ddd4;
+}
+
+/* ===== 2. Tipografía base del cuerpo =====
+   Work Sans para todo el texto de lectura, con fallback genérico
+   sans-serif por si Google Fonts no llega a cargar. */
+body {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-text);
+  background-color: var(--color-background);
+}
+
+/* Ninguna imagen del sitio debe ser más ancha que su contenedor
+   (por defecto una <img> se muestra a su tamaño real en píxeles,
+   y puede romper el layout si esa foto es muy grande). */
+img {
+  max-width: 100%;
+}
+
+/* ===== 3. Jerarquía de títulos =====
+   Fraunces (serif) para títulos: le da identidad "café de
+   especialidad" y contrasta con la sans-serif del cuerpo.
+   h1 queda claramente más grande y pesado que el párrafo.
+   (El margin-top:0 que llevaba la entrega anterior ya no hace
+   falta: el reset universal del punto 0 lo deja en 0 igual). */
+h1,
+h2,
+h3 {
+  font-family: 'Fraunces', serif;
+  color: var(--color-primary);
+}
+
+h1 {
+  font-size: 2.75rem;
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+h2 {
+  font-size: 1.875rem;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+p {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--color-text);
+}
+
+/* ===== 4. Fondo de header y footer =====
+   El header es blanco. El footer usa bg/inverse del Design System
+   de Figma (un café casi negro), distinto del fondo crema del body,
+   así que su texto vuelve a ser claro para tener contraste.
+   El footer, además, es un contenedor flex en columna. */
+header {
+  background-color: #ffffff;
+  border-bottom: 1px solid var(--color-text-muted);
+  padding: 1.5rem 2rem;
+}
+
+footer {
+  background-color: var(--color-bg-inverse);
+  color: var(--color-text-inverse);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Footer (Figma): marca + columnas arriba, línea divisoria, barra
+   de copyright abajo. */
+.footer-top {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.footer-marca {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.footer-tagline {
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 260px;
+}
+
+.footer-social {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  padding-left: 0;
+}
+
+.footer-social a,
+.footer-columna a {
+  color: var(--color-text-inverse);
+  text-decoration: none;
+}
+
+.footer-social a:hover,
+.footer-columna a:hover {
+  color: var(--color-secondary);
+}
+
+.footer-columnas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+}
+
+.footer-columna {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer-columna ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-left: 0;
+}
+
+.footer-columna__titulo {
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.footer-divider {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.footer-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
+  font-size: 0.75rem;
+}
+
+.footer-bottom p {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* ===== 5. Navegación (Bootstrap Navbar + Flexbox) =====
+   El responsive (hamburguesa en mobile) ahora lo resuelve el
+   Navbar de Bootstrap. Bootstrap ya deja .navbar en flex con
+   space-between; acá solo sumamos el gap que no trae por defecto.
+   El logo y el menú siguen siendo, cada uno, su propio contenedor
+   flex, con gap en vez de margin para separar cada elemento. */
+.navbar {
+  gap: 1rem 3rem;
+}
+
+/* En el header: la frase va debajo del logo, alineada a la
+   izquierda (antes iban uno al lado del otro). */
+/* Logo + frase bien pegados, para que se lean como una sola unidad. */
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+}
+
+/* Logotipo "Káva" (Figma, node 75:5): antes era texto en Fraunces,
+   ahora es la imagen del isotipo + wordmark. Se exportó en 2
+   versiones de color, ya resueltas en el archivo (no con filter
+   de CSS): oscura (#3b2415) para el header blanco, blanca para
+   el footer bg/inverse. Mismo tamaño que tenía el texto anterior. */
+.logo-marca-img {
+  display: block;
+  height: 1.5rem;
+  width: auto;
+}
+
+header .logo-marca-img {
+  height: 1.875rem;
+}
+
+.logo-tagline {
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  line-height: 1.1;
+}
+
+header .logo-tagline { color: var(--color-accent); }
+footer .logo-tagline { color: var(--color-secondary); }
+
+/* Bootstrap: menú desplegado en mobile, apilado en columna */
+.navbar-collapse {
+  padding-top: 1.5rem;
+}
+
+/* De Inicio al carrito: todo el bloque alineado a la derecha,
+   también en mobile (antes quedaba pegado a la izquierda). */
+.navbar-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1rem;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+  list-style: none;
+}
+
+.menu a {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--color-primary);
+  text-align: right;
+}
+
+.menu a:hover {
+  color: var(--color-accent);
+}
+
+/* Bootstrap: sus propios ".nav-link" pisan a ".menu a" si no
+   los apuntamos directo, por eso repetimos los mismos colores. */
+.navbar-nav .nav-link {
+  color: var(--color-primary);
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+  color: var(--color-accent);
+}
+
+/* Ícono de carrito (Figma): acá sin el badge superpuesto de la
+   consigna original (eso pide position, que todavía no vimos) —
+   el número va al lado, con gap, en vez de encima del ícono. */
+.cart-icon {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: var(--color-primary);
+}
+
+.cart-icon__count {
+  background-color: var(--color-accent-terracotta);
+  color: var(--color-text-inverse);
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.05rem 0.4rem;
+  border-radius: 999px;
+}
+
+/* El botón "Comprar café" solo aparece en escritorio, igual que
+   en el diseño de Figma (en mobile/tablet no hay espacio para él). */
+.navbar-actions .cta-button-principal {
+  display: none;
+}
+
+/* Bootstrap: logo y botón hamburguesa con estilo propio */
+.navbar-brand {
+  margin-right: 0;
+}
+
+.navbar-toggler {
+  border-color: var(--color-text-muted);
+}
+
+/* ===== 6. Botones =====
+   Selectores cortos, todo por clase (nunca #id), sin !important. */
+.cta-button-principal,
+.btn-primario {
+  background-color: var(--color-accent);
+  color: var(--color-text-inverse);
+  border: none;
+  border-radius: 999px;
+  padding: 0.75rem 1.5rem;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 600;
+  /* Estas clases se usan también en <a>: sin subrayado y en bloque */
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* Pseudoclases: oscurece al pasar el mouse y más al hacer click */
+.cta-button-principal:hover,
+.btn-primario:hover {
+  background-color: var(--color-primary);
+}
+
+.cta-button-principal:active,
+.btn-primario:active {
+  background-color: var(--color-bg-inverse);
+}
+
+.cta-button-secundario,
+.btn-secundario {
+  background-color: transparent;
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+  border-radius: 999px;
+  padding: 0.75rem 1.5rem;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 600;
+  /* Estas clases se usan también en <a>: sin subrayado y en bloque */
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* Pseudoclases: se rellenan al pasar el mouse y al hacer click */
+.cta-button-secundario:hover,
+.btn-secundario:hover {
+  background-color: var(--color-primary);
+  color: var(--color-text-inverse);
+}
+
+.cta-button-secundario:active,
+.btn-secundario:active {
+  background-color: var(--color-bg-inverse);
+  color: var(--color-text-inverse);
+}
+
+/* ===== 7. Estructura y espaciado de las secciones (Box Model + Flexbox) =====
+   Cada sección de contenido es un contenedor flex en columna: el
+   espacio ENTRE sus elementos hijos (título, párrafo, tarjetas,
+   botón) lo da el gap, no un margin suelto en cada uno.
+   El padding le da a la sección "aire" respecto a sus propios
+   bordes (32px, muy por encima del mínimo de 20px pedido).
+   El margin-bottom separa una sección de la siguiente.
+   Estas clases se comparten entre index.html y todas las páginas
+   de pages/, así que el mismo layout se aplica en todo el sitio. */
+.hero-content,
+.xq-káva,
+.nuestra-filosofía,
+.experiencia-káva,
+.origenes,
+.tipos-de-preparacion,
+.coleccion-grupo,
+.coleccion-final,
+.formulario-contacto,
+.galeria-origenes {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* "experiencia-káva" es la última sección antes del footer: no
+   necesita separación extra por debajo. */
+.experiencia-káva {
+  margin-bottom: 0;
+}
+
+/* Hero con foto de fondo: el degradado oscuro va ARRIBA de la
+   imagen (varios background-image, separados por coma) para que
+   el texto claro siga siendo legible sobre la foto. */
+.hero-content {
+  background-image: linear-gradient(rgba(59, 36, 21, 0.55), rgba(59, 36, 21, 0.55)),
+    url('../Assets/img/hero.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: var(--color-text-inverse);
+}
+
+.hero-content h1,
+.hero-content p {
+  color: var(--color-text-inverse);
+}
+
+/* Figma: título del hero de Inicio con el estilo de texto local
+   "Display/2XL" (Fraunces SemiBold, 56px, interlineado 64px,
+   letter-spacing -0.5px). Es más grande que el h1 general del
+   sitio (2.75rem), así que se define aparte y solo se usa acá. */
+.hero-home__titulo {
+  font-size: 3.5rem;
+  line-height: 4rem;
+  letter-spacing: -0.5px;
+}
+
+.hero-content .cta-button-secundario {
+  color: var(--color-text-inverse);
+  border-color: var(--color-text-inverse);
+}
+
+/* Hero del inicio: ocupa toda la altura de la pantalla, con su
+   propia foto, para que al entrar solo se vea el hero y el resto
+   de las secciones aparezca al hacer scroll. Cada slide del
+   carrusel usa su propia foto (ver modificadores --1/--2/--3 abajo).
+   Figma: referencia de layout (no de contenido ni colores). El
+   bloque va más arriba (centrado), no pegado abajo del todo, y con
+   menos gap general: el espacio grande queda ENTRE el párrafo y los
+   botones (ver .hero-home .hero-botones más abajo), no por encima
+   del título. */
+.hero-home {
+  min-height: 100vh;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 0;
+}
+
+/* Bootstrap: las flechas prev/next del carrusel ocupan una franja a
+   cada lado; se agranda el padding lateral para que el título y los
+   botones no queden debajo de esa franja. Selector compuesto
+   (.hero-content.hero-home) a propósito: sube la especificidad para
+   ganarle al padding-left/right que las media queries de tablet y
+   escritorio ya definen para .hero-content más abajo en el archivo.
+   Crece en las mismas 3 franjas (mobile/tablet/escritorio) que el
+   resto del sitio, así la franja libre para las flechas también
+   crece junto con el ancho de pantalla. */
+.hero-content.hero-home {
+  padding-left: 3.5rem;
+  padding-right: 3.5rem;
+}
+
+@media (min-width: 768px) {
+  .hero-content.hero-home {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-content.hero-home {
+    padding-left: 6rem;
+    padding-right: 6rem;
+  }
+}
+
+.hero-home .hero-botones {
+  margin-top: 1rem;
+}
+
+/* Bootstrap: 3 slides del carrusel del hero, una foto por slide */
+.hero-home--1 {
+  background-image: linear-gradient(rgba(59, 36, 21, 0.55), rgba(59, 36, 21, 0.55)),
+    url('../Assets/img/hero-grupo-riendo.jpg');
+}
+
+.hero-home--2 {
+  background-image: linear-gradient(rgba(59, 36, 21, 0.55), rgba(59, 36, 21, 0.55)),
+    url('../Assets/img/hero-brindis-cenital.jpg');
+}
+
+/* TODO: cambiar por la imagen 3 (laptop + café) cuando llegue */
+.hero-home--3 {
+  background-image: linear-gradient(rgba(59, 36, 21, 0.55), rgba(59, 36, 21, 0.55)),
+    url('../Assets/img/hero-brindis-cenital.jpg');
+}
+
+/* Bootstrap: el carousel del hero es quien separa del siguiente
+   bloque (antes ese margen lo daba .hero-content directamente). */
+#heroCarousel {
+  margin-bottom: 2rem;
+}
+
+/* Botones del hero: en fila, alineados a la derecha (Figma:
+   distribución de botones de la referencia de layout), no uno
+   debajo del otro. */
+.hero-botones {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+/* Grid Container (Módulo 4): título arriba, tarjetas abajo. En
+   mobile es 1 sola columna; en tablet/desktop se reordena en las
+   media queries del final del archivo. */
+.destacados {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "titulo"
+    "card1"
+    "card2"
+    "card3";
+  gap: 1.5rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.destacados h2 { grid-area: titulo; }
+.destacados .producto-destacado:nth-of-type(1) { grid-area: card1; }
+.destacados .producto-destacado:nth-of-type(2) { grid-area: card2; }
+.destacados .producto-destacado:nth-of-type(3) { grid-area: card3; }
+
+.coleccion-grupo__descripcion {
+  color: var(--color-text-muted);
+}
+
+/* Grid Container (Módulo 4): cards de cada colección. Mobile: 1
+   columna; tablet/desktop suman columnas (media queries al final). */
+.grid-productos {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+/* Bootstrap: por defecto ".collapse.show" queda en display:block;
+   acá lo forzamos a grid para que, ya abierto, se vea igual que
+   el resto de la colección. */
+.grid-productos.show {
+  display: grid;
+}
+
+/* Mobile-first: apilada en columna por defecto. Pasa a fila en
+   tablet/desktop (ver media query min-width: 768px). */
+.presentacion-contacto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.presentacion-contacto figure,
+.presentacion-contacto p {
+  flex: 1;
+}
+
+/* ===== 8. Tarjetas y bloques de contenido =====
+   padding: 1.5rem (24px) ya cumple de sobra el mínimo de 20px
+   pedido para contenedores pequeños. El margin-bottom que estas
+   tarjetas tenían en la entrega anterior se elimina: el espacio
+   entre una tarjeta y la siguiente ahora lo da el gap de la
+   sección que las contiene (ver punto 7), no un margin propio. */
+.producto-destacado,
+.beneficio,
+.bloques-origenes,
+.card-producto {
+  background-color: #ffffff;
+  border: 1px solid var(--color-text-muted);
+  border-radius: 16px;
+  padding: 1.5rem;
+}
+
+/* Bootstrap: acordeón "Aprende a preparar tu café", adaptado a
+   la paleta e identidad tipográfica de Káva. */
+.tipos-de-preparacion__descripcion {
+  color: var(--color-text-muted);
+}
+
+.accordion-item {
+  border-color: var(--color-text-muted);
+}
+
+.accordion-button {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 600;
+  color: var(--color-primary);
+  background-color: #ffffff;
+}
+
+/* Pseudoclase: color de acento cuando el ítem está abierto */
+.accordion-button:not(.collapsed) {
+  color: var(--color-text-inverse);
+  background-color: var(--color-accent);
+}
+
+.accordion-button:focus {
+  box-shadow: 0 0 0 2px var(--color-accent);
+}
+
+.accordion-body {
+  font-family: 'Work Sans', sans-serif;
+  color: var(--color-text);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.accordion-body ol {
+  padding-left: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Fotos de producto: mismo tamaño fijo para las tres (antes cada
+   una se veía distinta porque cada foto trae su propio alto/ancho).
+   object-fit: contain muestra la foto completa, sin recortarla,
+   dentro de esa caja. */
+.producto-destacado img,
+.card-producto__imagen img {
+  display: block;
+  width: 150px;
+  height: 280px;
+  object-fit: contain;
+  margin: 0 auto;
+}
+
+/* Figma: badges de disponibilidad y tueste sobre las tarjetas. */
+.card-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.125rem 0.75rem;
+  border-radius: 999px;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 500;
+  font-size: 0.75rem;
+  white-space: nowrap;
+}
+
+.badge--success { background-color: var(--color-feedback-success-bg); color: var(--color-feedback-success-text); }
+.badge--error { background-color: var(--color-feedback-error-bg); color: var(--color-feedback-error-text); }
+.badge--warning { background-color: var(--color-feedback-warning-bg); color: var(--color-feedback-warning-text); }
+.badge--info { background-color: var(--color-feedback-info-bg); color: var(--color-feedback-info-text); }
+.badge--neutral { background-color: var(--color-bg-surface-alt); color: var(--color-text-secondary); }
+.badge--gold { background-color: var(--color-accent-gold); color: var(--color-bg-inverse); }
+.badge--terracotta { background-color: var(--color-accent-terracotta); color: var(--color-text-inverse); }
+.badge--sage { background-color: var(--color-secondary); color: var(--color-accent); }
+
+.card-producto__precio {
+  color: var(--color-accent-terracotta);
+  font-weight: 600;
+}
+
+/* Fila de botones de cada tarjeta de producto: gap en vez de que
+   queden pegados uno al otro. */
+.card-producto__acciones {
+  display: flex;
+  gap: 0.75rem;
+}
+
+/* ===== 9. Formulario de contacto =====
+   El formulario se convierte en su propia "tarjeta" flex en
+   columna (mismo patrón visual que .producto-destacado y compañía
+   del punto 8): fondo blanco, borde suave y padding de 32px.
+   El gap entre label/input/botón reemplaza los margin-top sueltos
+   que usábamos en la entrega anterior. */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  background-color: #ffffff;
+  border: 1px solid var(--color-text-muted);
+  border-radius: 16px;
+  padding: 2rem;
+}
+
+form label {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+form input,
+form textarea,
+form select {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 1rem;
+  padding: 0.6rem;
+  border: 1px solid var(--color-text-muted);
+}
+
+form input:focus,
+form textarea:focus,
+form select:focus {
+  border-color: var(--color-accent);
+  background-color: var(--color-background);
+}
+
+/* ===== 9.1 Figma: tarjeta "Contact Form" (node 71:2) =====
+   Componente aparte del formulario genérico de arriba: fondo
+   blanco, radio 16px, padding 32px y gap 16px, igual que en Figma. */
+.tarjeta-formulario {
+  background-color: #ffffff;
+  border: 1px solid var(--color-border-default);
+  border-radius: 16px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.tarjeta-formulario__titulo {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: var(--color-primary);
+}
+
+.tarjeta-formulario__descripcion {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+}
+
+/* La tarjeta ya es la "caja": el <form> de acá adentro solo
+   organiza los campos, sin fondo/borde propio (ver regla "form"
+   genérica más arriba). */
+.form-contacto {
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  gap: 1rem;
+}
+
+.campo-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  width: 100%;
+}
+
+.campo-form label {
+  font-size: 0.8125rem;
+}
+
+.campo-form input,
+.campo-form select,
+.campo-form textarea {
+  font-size: 0.875rem;
+  color: var(--color-primary);
+  border: 1.5px solid var(--color-border-default);
+  border-radius: 8px;
+  padding: 0 1rem;
+  height: 44px;
+}
+
+.campo-form textarea {
+  height: auto;
+  padding: 0.75rem 1rem;
+  resize: vertical;
+}
+
+.campo-form__ayuda {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+/* Figma: código de país + número, un solo campo visual */
+.campo-form__telefono {
+  display: flex;
+  align-items: center;
+  border: 1.5px solid var(--color-border-default);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Pseudoclase: resalta el campo completo al enfocar cualquier parte */
+.campo-form__telefono:focus-within {
+  border-color: var(--color-accent);
+}
+
+.campo-form__telefono select,
+.campo-form__telefono input {
+  border: none;
+  border-radius: 0;
+  height: 42px;
+}
+
+.campo-form__telefono select {
+  width: auto;
+  padding-right: 0.5rem;
+  border-right: 1.5px solid var(--color-border-default);
+}
+
+.campo-form__telefono input {
+  flex: 1;
+  min-width: 0;
+}
+
+.tarjeta-formulario__enviar {
+  background-color: var(--color-primary);
+  color: var(--color-text-inverse);
+  border: none;
+  border-radius: 999px;
+  padding: 0.75rem 1.5rem;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  width: 100%;
+}
+
+/* Pseudoclases: mismo tratamiento que el resto de los botones primarios */
+.tarjeta-formulario__enviar:hover {
+  background-color: var(--color-accent);
+}
+
+.tarjeta-formulario__enviar:active {
+  background-color: var(--color-bg-inverse);
+}
+
+/* ===== 10. Bootstrap: carousel y modal =====
+   Bootstrap trae el carousel pensado para fotos oscuras de fondo
+   completo; acá lo adaptamos a nuestras fotos de producto, que
+   tienen fondo claro. El borde y el radio son solo para ESTE
+   carrusel de orígenes (fotos con fondo blanco, necesita marco);
+   el carrusel del hero de Inicio usa foto a pantalla completa y no
+   debe llevar borde. */
+#carouselOrigenes .carousel-inner {
+  border: 1px solid var(--color-text-muted);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 320px;
+  object-fit: contain;
+  background-color: #ffffff;
+  padding: 1.5rem;
+}
+
+.carousel-item__titulo {
+  text-align: center;
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  color: var(--color-primary);
+  background-color: #ffffff;
+  padding: 0 0 1rem;
+}
+
+/* Bootstrap: modal con nuestros radios y tipografía */
+.modal-content {
+  border-radius: 16px;
+  font-family: 'Work Sans', sans-serif;
+}
+
+.modal-producto__imagen {
+  width: 100%;
+  max-height: 260px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+/* ===== 11. Responsive (Módulo 4) =====
+   Mobile-first: se parte de 1 columna y se agregan columnas a
+   medida que hay más ancho de pantalla. */
+
+/* Tablet */
+@media (min-width: 768px) {
+  /* Más aire a los costados a medida que crece la pantalla. */
+  header,
+  footer,
+  .hero-content,
+  .xq-káva,
+  .nuestra-filosofía,
+  .experiencia-káva,
+  .origenes,
+  .tipos-de-preparacion,
+  .coleccion-grupo,
+  .coleccion-final,
+  .formulario-contacto,
+  .galeria-origenes,
+  .destacados,
+  .presentacion-contacto {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  .destacados {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "titulo titulo"
+      "card1  card2"
+      "card3  card3";
+  }
+
+  .grid-productos {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .presentacion-contacto {
+    flex-direction: row;
+  }
+
+  /* Bootstrap: de acá en adelante el navbar ya no colapsa,
+     así que el menú vuelve a mostrarse en fila. margin-left:auto
+     lo empuja lo más a la derecha posible, incluso si el logo y
+     el menú no entran en la misma línea. */
+  .navbar-collapse {
+    padding-top: 0;
+    margin-left: auto;
+  }
+
+  .navbar-actions {
+    flex-direction: row;
+    align-items: center;
+    gap: 1.25rem;
+  }
+
+  .menu {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem 1.5rem;
+  }
+}
+
+/* Escritorio */
+@media (min-width: 1024px) {
+  /* Todavía más aire en pantallas grandes. */
+  header,
+  footer,
+  .hero-content,
+  .xq-káva,
+  .nuestra-filosofía,
+  .experiencia-káva,
+  .origenes,
+  .tipos-de-preparacion,
+  .coleccion-grupo,
+  .coleccion-final,
+  .formulario-contacto,
+  .galeria-origenes,
+  .destacados,
+  .presentacion-contacto {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+
+  .destacados {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+      "titulo titulo titulo"
+      "card1  card2   card3";
+  }
+
+  .grid-productos {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .navbar-actions .cta-button-principal {
+    display: inline-block;
+  }
+}
