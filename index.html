@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Káva | Especialidad en cada grano</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600&family=Oswald:wght@400;500;600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Bootstrap: CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/styles.css">
+</head>
+
+<body>
+        <!-- Bootstrap: header y navbar -->
+    <header> <!-- encabezado de la pagina van de h1 a h6 -->
+      <!-- Bootstrap: navbar responsivo -->
+      <nav class="navbar navbar-expand-md">
+
+        <!-- Logo de la empresa -->
+        <a class="navbar-brand" href="./index.html">
+            <div class="logo">
+                <img src="./Assets/img/logo/logo-kava-header.png" alt="Káva" class="logo-marca-img">
+                <p class="logo-tagline">Especialidad en cada grano</p>
+            </div>
+        </a>
+
+        <!-- Bootstrap: botón hamburguesa -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navKava" aria-controls="navKava" aria-expanded="false" aria-label="Abrir menú">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Bootstrap: menú colapsable -->
+        <div class="collapse navbar-collapse" id="navKava">
+            <div class="navbar-actions">
+                <ul class="navbar-nav menu">
+                    <li class="nav-item"><a class="nav-link" href="./index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./pages/origenes.html">Orígenes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./pages/colecciones.html">Nuestros productos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./pages/guiadepreparacion.html">Academia</a></li>
+                </ul>
+
+                <!-- Botón: acceso directo a distribuidores -->
+                <a class="cta-button-secundario" href="./pages/contactanos.html">Quiero ser distribuidor</a>
+
+                <button class="cta-button-principal">Comprar café</button>
+
+                <div class="cart-icon" aria-label="Carrito (3 productos)">
+                    <svg class="cart-icon__svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                        <path d="M6 8h12l-1 12a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1L6 8z"/>
+                        <path d="M9 8V6a3 3 0 0 1 6 0v2"/>
+                    </svg>
+                    <span class="cart-icon__count">3</span>
+                </div>
+            </div>
+        </div>
+
+      </nav>
+    </header>  
+
+    <main> <!-- contenido principal de la pagina -->
+
+        <!-- Bootstrap: carousel del hero, ocupa toda la pantalla -->
+        <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+
+            <!-- Bootstrap: indicadores -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+
+            <!-- Bootstrap: slides -->
+            <div class="carousel-inner">
+
+                <!-- Slide 1: imagen 2 (grupo riendo). TODO: contenido propio más adelante -->
+                <div class="carousel-item active">
+                    <div class="hero-content hero-home hero-home--1">
+                        <h1 class="hero-home__titulo"> Detener el tiempo <br> para conectar con lo esencial. </h1>
+
+                        <p>
+                            Cada taza cuenta una historia.
+                            En Káva seleccionamos cafés de especialidad provenientes
+                            de pequeños productores y los tostamos
+                            cuidadosamente para revelar todo el carácter de su origen.
+                            Porque el mejor café no solo se bebe, Se vive.
+                        </p>
+
+                        <div class="hero-botones">
+                            <button class="cta-button-principal"> Descubre la colección</button>
+                            <button class="cta-button-secundario"> conoce nuestro origen</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 2: imagen 1 (brindis cenital). TODO: contenido propio más adelante -->
+                <div class="carousel-item">
+                    <div class="hero-content hero-home hero-home--2">
+                        <h1 class="hero-home__titulo"> Detener el tiempo <br> para conectar con lo esencial. </h1>
+
+                        <p>
+                            Cada taza cuenta una historia.
+                            En Káva seleccionamos cafés de especialidad provenientes
+                            de pequeños productores y los tostamos
+                            cuidadosamente para revelar todo el carácter de su origen.
+                            Porque el mejor café no solo se bebe, Se vive.
+                        </p>
+
+                        <div class="hero-botones">
+                            <button class="cta-button-principal"> Descubre la colección</button>
+                            <button class="cta-button-secundario"> conoce nuestro origen</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 3: TODO — falta la imagen 3 (laptop + café), usa la 1 de relleno -->
+                <div class="carousel-item">
+                    <div class="hero-content hero-home hero-home--3">
+                        <h1 class="hero-home__titulo"> Detener el tiempo <br> para conectar con lo esencial. </h1>
+
+                        <p>
+                            Cada taza cuenta una historia.
+                            En Káva seleccionamos cafés de especialidad provenientes
+                            de pequeños productores y los tostamos
+                            cuidadosamente para revelar todo el carácter de su origen.
+                            Porque el mejor café no solo se bebe, Se vive.
+                        </p>
+
+                        <div class="hero-botones">
+                            <button class="cta-button-principal"> Descubre la colección</button>
+                            <button class="cta-button-secundario"> conoce nuestro origen</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Bootstrap: controles -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Siguiente</span>
+            </button>
+        </div>
+
+    </main>
+
+    <section class="destacados"> <!-- productos o info destacada -->
+        <h2 class="titulos-secciones"> Cafes que conquistan a nuestros clientes</h2>
+
+        <article class="producto-destacado">
+            <img src="./Assets/img/etiopia.png" alt="Bolsa de café Etiopía Idido de Káva">
+            <!-- Figma: badges de disponibilidad y tueste -->
+            <div class="card-badges">
+                <span class="badge badge--success">Disponible</span>
+                <span class="badge badge--gold">Tueste medio</span>
+            </div>
+            <h3> Etiopía Idido</h3>
+            <p> Floral, elegante y delicado.<br>
+                 ideal para compartir con amigos</p>
+            <!-- Bootstrap: abre modal producto -->
+            <button class="cta-button-principal" type="button" data-bs-toggle="modal" data-bs-target="#modalEtiopia">Ver prducto </button>
+        </article>
+
+          <article class="producto-destacado">
+            <img src="./Assets/img/colombia.png" alt="Bolsa de café Colombia El Paraíso de Káva">
+            <!-- Figma: badges de disponibilidad y tueste -->
+            <div class="card-badges">
+                <span class="badge badge--warning">Últimas unidades</span>
+                <span class="badge badge--gold">Tueste medio</span>
+            </div>
+            <h3> Colombia El Paraíso</h3>
+            <p> Notas dulces de chocolate, frutos rojos y caramelo.<br>
+                Perfecto para todos los días.</p>
+            <!-- Bootstrap: abre modal producto -->
+            <button class="cta-button-principal" type="button" data-bs-toggle="modal" data-bs-target="#modalColombia">Ver prducto </button>
+        </article>
+
+          <article class="producto-destacado">
+            <img src="./Assets/img/indonesia.png" alt="Bolsa de café Sumatra Mandheling de Káva">
+            <!-- Figma: badges de disponibilidad y tueste -->
+            <div class="card-badges">
+                <span class="badge badge--error">Agotado</span>
+                <span class="badge badge--terracotta">Tueste oscuro</span>
+            </div>
+            <h3> Sumatra Mandheling</h3>
+            <p> Intenso, especiado y con gran cuerpo. <br>
+                 ideal para prensa francesa y espresso.</p>
+            <!-- Bootstrap: abre modal producto -->
+            <button class="cta-button-principal" type="button" data-bs-toggle="modal" data-bs-target="#modalIndonesia">Ver prducto </button>
+        </article>
+
+    </section>
+
+    <!-- Bootstrap: modales de producto -->
+
+    <!-- Bootstrap: modal Etiopía -->
+    <div class="modal fade" id="modalEtiopia" tabindex="-1" aria-labelledby="modalEtiopiaLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <!-- Bootstrap: encabezado modal -->
+          <div class="modal-header">
+            <h3 class="modal-title" id="modalEtiopiaLabel">Etiopía Idido</h3>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+          </div>
+          <!-- Bootstrap: cuerpo modal -->
+          <div class="modal-body">
+            <img src="./Assets/img/etiopia.png" alt="Bolsa de café Etiopía Idido de Káva" class="modal-producto__imagen">
+            <p><strong>País:</strong> Etiopía</p>
+            <p><strong>Notas de cata:</strong> Jazmín, Bergamota, Té Negro.</p>
+            <p>Floral, elegante y delicado. Ideal para compartir con amigos.</p>
+          </div>
+          <!-- Bootstrap: pie modal -->
+          <div class="modal-footer">
+            <a href="./pages/colecciones.html" class="cta-button-principal">Ver colección completa</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap: modal Colombia -->
+    <div class="modal fade" id="modalColombia" tabindex="-1" aria-labelledby="modalColombiaLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <!-- Bootstrap: encabezado modal -->
+          <div class="modal-header">
+            <h3 class="modal-title" id="modalColombiaLabel">Colombia El Paraíso</h3>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+          </div>
+          <!-- Bootstrap: cuerpo modal -->
+          <div class="modal-body">
+            <img src="./Assets/img/colombia.png" alt="Bolsa de café Colombia El Paraíso de Káva" class="modal-producto__imagen">
+            <p><strong>País:</strong> Colombia</p>
+            <p><strong>Notas de cata:</strong> Chocolate, Frutos Rojos y Caramelo.</p>
+            <p>Notas dulces, perfecto para todos los días.</p>
+          </div>
+          <!-- Bootstrap: pie modal -->
+          <div class="modal-footer">
+            <a href="./pages/colecciones.html" class="cta-button-principal">Ver colección completa</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap: modal Indonesia -->
+    <div class="modal fade" id="modalIndonesia" tabindex="-1" aria-labelledby="modalIndonesiaLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <!-- Bootstrap: encabezado modal -->
+          <div class="modal-header">
+            <h3 class="modal-title" id="modalIndonesiaLabel">Sumatra Mandheling</h3>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+          </div>
+          <!-- Bootstrap: cuerpo modal -->
+          <div class="modal-body">
+            <img src="./Assets/img/indonesia.png" alt="Bolsa de café Sumatra Mandheling de Káva" class="modal-producto__imagen">
+            <p><strong>País:</strong> Indonesia</p>
+            <p><strong>Notas de cata:</strong> Cacao oscuro, Especias, Hierbas.</p>
+            <p>Intenso y con gran cuerpo, ideal para prensa francesa y espresso.</p>
+          </div>
+          <!-- Bootstrap: pie modal -->
+          <div class="modal-footer">
+            <a href="./pages/colecciones.html" class="cta-button-principal">Ver colección completa</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="xq-káva"> <!-- por qué elegir Káva -->
+
+        <h2 class="titulos-secciones"> ¿Por qué elegir Káva? </h2>
+    <article class="beneficio">
+        <h3> origen responsable </h3>
+        <p> Trabajamos directamente con productores que cultivan café bajo prácticas sostenibles y comercio justo. </p>
+    </article>
+
+    <article class="beneficio">
+        <h3> Tueste Artesanal </h3>
+        <p> Cada lote se desarrolla individualmente para resaltar sus notas naturales sin sobreexponer el grano al calor. </p>
+    </article>
+
+    <article class="beneficio">
+        <h3>  Calidad Garantizada </h3>
+        <p> Solo seleccionamos microlotes que cumplen nuestros estándares de sabor, frescura y trazabilidad. </p>
+    </article>
+
+    </section>
+        
+    <section class="nuestra-filosofía"> <!-- nuestra filosofia de la empresa -->
+
+        <h2 class="titulos-secciones"> Un café excepcional comienza mucho antes de la taza.</h2>
+        <p> Cada cosecha representa meses de trabajo, clima, dedicación <br>
+            y conocimiento. Nosotros respetamos ese proceso.<br>
+            Desde la finca hasta el tueste, cada decisión busca conservar <br>
+            la identidad del café para que puedas descubrir sabores auténticos en cada preparación.
+          </p>
+
+    </section>
+
+    <section class="experiencia-káva"> <!-- experiencia de la empresa -->
+        <p> "No vendemos simplemente café. <br>
+             Creamos momentos para detenerse, compartir y disfrutar."
+        </p>
+    </section>
+
+    <footer> <!-- pie de pagina -->
+        <div class="footer-top">
+
+            <div class="footer-marca">
+                <img src="./Assets/img/logo/logo-kava-footer.png" alt="Káva" class="logo-marca-img">
+                <p class="footer-tagline">Especialista en café. Origen, tueste y aroma en cada taza.</p>
+                <ul class="footer-social">
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Spotify</a></li>
+                    <li><a href="#">Facebook</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-columnas">
+                <div class="footer-columna">
+                    <p class="footer-columna__titulo">Explorar</p>
+                    <ul>
+                        <li><a href="./index.html">Inicio</a></li>
+                        <li><a href="./pages/origenes.html">Orígenes</a></li>
+                        <li><a href="./pages/colecciones.html">Nuestros productos</a></li>
+                        <li><a href="./pages/guiadepreparacion.html">Academia</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-columna">
+                    <p class="footer-columna__titulo">Ayuda</p>
+                    <ul>
+                        <li><a href="./pages/contactanos.html">Contáctanos</a></li>
+                        <li><a href="#">Envíos</a></li>
+                        <li><a href="#">Preguntas frecuentes</a></li>
+                        <li><a href="#">Términos y condiciones</a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <hr class="footer-divider">
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Káva. Todos los derechos reservados.</p>
+            <p>Hecho con &hearts; para los amantes del café</p>
+        </div>
+    </footer> 
+    <!-- Bootstrap: JS bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+   
+</html>

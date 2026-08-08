@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Káva | Especialidad en cada grano</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600&family=Oswald:wght@400;500;600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Bootstrap: CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/styles.css">
+</head>
+
+<body>
+        <!-- Bootstrap: header y navbar -->
+    <header> <!-- encabezado de la pagina van de h1 a h6 -->
+      <!-- Bootstrap: navbar responsivo -->
+      <nav class="navbar navbar-expand-md">
+
+        <!-- Logo de la empresa -->
+        <a class="navbar-brand" href="../index.html">
+            <div class="logo">
+                <img src="../Assets/img/logo/logo-kava-header.png" alt="Káva" class="logo-marca-img">
+                <p class="logo-tagline">Especialidad en cada grano</p>
+            </div>
+        </a>
+
+        <!-- Bootstrap: botón hamburguesa -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navKava" aria-controls="navKava" aria-expanded="false" aria-label="Abrir menú">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Bootstrap: menú colapsable -->
+        <div class="collapse navbar-collapse" id="navKava">
+            <div class="navbar-actions">
+                <ul class="navbar-nav menu">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./origenes.html">Orígenes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./colecciones.html">Nuestros productos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./guiadepreparacion.html">Academia</a></li>
+                </ul>
+
+                <!-- Botón: acceso directo a distribuidores -->
+                <a class="cta-button-secundario" href="./contactanos.html">Quiero ser distribuidor</a>
+
+                <button class="cta-button-principal">Comprar café</button>
+
+                <div class="cart-icon" aria-label="Carrito (3 productos)">
+                    <svg class="cart-icon__svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                        <path d="M6 8h12l-1 12a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1L6 8z"/>
+                        <path d="M9 8V6a3 3 0 0 1 6 0v2"/>
+                    </svg>
+                    <span class="cart-icon__count">3</span>
+                </div>
+            </div>
+        </div>
+
+      </nav>
+    </header>  
+
+    <main> <!-- contenido principal de la pagina -->
+
+        <section class="hero-content"> <!-- Sección de presentación -->
+            <h1> Nuestros orígenes </h1>
+            <p>
+                Cada bolsa de Káva tiene una historia detrás: una finca, un clima, una familia productora.
+                Acá te contamos, paso a paso, todo lo que pasa antes de que el café llegue a tu taza.
+            </p>
+        </section>
+
+        <section class="origenes"> <!-- Sección de información general / proceso -->
+            <h2 class="titulos-secciones"> De la finca a tu taza </h2>
+
+            <article class="bloques-origenes">
+                <figure>
+                    <img src="../Assets/img/historia.jpg" alt="Grano de café secándose al sol en una finca de origen">
+                    <figcaption>Así empieza todo: el grano recién cosechado.</figcaption>
+                </figure>
+                <h3> Introducción </h3>
+                <p> Cada origen tiene un clima diferente.<br>
+                    Cada suelo aporta características únicas.<br>
+                    Cada productor imprime su propia esencia.<br>
+                    Nuestro trabajo consiste en preservar toda esa identidad hasta llegar a tu taza.
+                </p>
+
+            </article>
+
+            <article class="bloques-origenes">
+                <figure>
+                    <img src="../Assets/img/historia.jpg" alt="Familia productora de café trabajando en la finca">
+                    <figcaption>Familias productoras que comparten nuestra visión.</figcaption>
+                </figure>
+                <h3> Seleccionamos personas, no proveedores. </h3>
+                <p> Visitamos fincas ubicadas en algunas de las regiones cafetaleras más reconocidas del mundo.
+                    Construimos relaciones a largo plazo con familias productoras que comparten nuestra visión de calidad, sostenibilidad y comercio justo.
+                    Cada compra representa una inversión directa en quienes hacen posible este café.
+                </p>
+            </article>
+
+            <article class="bloques-origenes">
+                <figure>
+                    <img src="../Assets/img/historia.jpg" alt="Tostadora de café en pleno proceso de tueste artesanal">
+                    <figcaption>Curvas de tueste diseñadas para cada origen.</figcaption>
+                </figure>
+                <h3> El arte del tueste. </h3>
+                <p> No existen recetas universales.
+                    Cada origen necesita un perfil de tueste distinto.
+                    Nuestros lotes se desarrollan lentamente mediante curvas de temperatura cuidadosamente
+                    diseñadas para conservar aromas florales, notas frutales y dulzores naturales.
+                </p>
+            </article>
+
+            <article class="bloques-origenes">
+                <figure>
+                    <img src="../Assets/img/historia.jpg" alt="Bolsas de café Káva selladas y etiquetadas listas para envío">
+                    <figcaption>Empacado pocas horas después del tueste.</figcaption>
+                </figure>
+                <h3>  Del origen hasta tu mesa. </h3>
+                <p> Empacamos el café pocas horas después del tueste para conservar toda su frescura.
+                    Cada bolsa incluye fecha de tueste, región, variedad, proceso y perfil sensorial.
+                    Porque creemos que conocer el origen transforma la experiencia.
+                </p>
+            </article>
+
+            <button class="cta-button-principal"> Descubre la colección completa</button>
+
+        </section>
+
+    </main>
+    
+    <footer> <!-- pie de pagina -->
+        <div class="footer-top">
+
+            <div class="footer-marca">
+                <img src="../Assets/img/logo/logo-kava-footer.png" alt="Káva" class="logo-marca-img">
+                <p class="footer-tagline">Especialista en café. Origen, tueste y aroma en cada taza.</p>
+                <ul class="footer-social">
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Spotify</a></li>
+                    <li><a href="#">Facebook</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-columnas">
+                <div class="footer-columna">
+                    <p class="footer-columna__titulo">Explorar</p>
+                    <ul>
+                        <li><a href="../index.html">Inicio</a></li>
+                        <li><a href="./origenes.html">Orígenes</a></li>
+                        <li><a href="./colecciones.html">Nuestros productos</a></li>
+                        <li><a href="./guiadepreparacion.html">Academia</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-columna">
+                    <p class="footer-columna__titulo">Ayuda</p>
+                    <ul>
+                        <li><a href="./contactanos.html">Contáctanos</a></li>
+                        <li><a href="#">Envíos</a></li>
+                        <li><a href="#">Preguntas frecuentes</a></li>
+                        <li><a href="#">Términos y condiciones</a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <hr class="footer-divider">
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Káva. Todos los derechos reservados.</p>
+            <p>Hecho con &hearts; para los amantes del café</p>
+        </div>
+    </footer> 
+    <!-- Bootstrap: JS bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+   
+</html>
