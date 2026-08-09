@@ -1,0 +1,36 @@
+@use '../utilities/variables' as *;
+@use '../utilities/mixins' as *;
+
+.cta-button-principal,
+.btn-primario {
+  @include boton-base;
+  background-color: $color-accent;
+  color: $color-text-inverse;
+  border: none;
+
+  &:hover {
+    background-color: $color-primary;
+  }
+
+  &:active {
+    background-color: $color-bg-inverse;
+  }
+}
+
+.cta-button-secundario,
+.btn-secundario {
+  @include boton-base;
+  background-color: transparent;
+  color: $color-primary;
+  border: 2px solid $color-primary;
+
+  &:hover {
+    background-color: $color-primary;
+    color: $color-text-inverse;
+  }
+
+  &:active {
+    background-color: $color-bg-inverse;
+    color: $color-text-inverse;
+  }
+}

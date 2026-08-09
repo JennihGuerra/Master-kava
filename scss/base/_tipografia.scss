@@ -1,0 +1,30 @@
+@use '../utilities/variables' as *;
+
+h1,
+h2,
+h3 {
+  font-family: 'Fraunces', serif;
+  color: $color-primary;
+}
+
+h1 {
+  font-size: 2.75rem;
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+h2 {
+  font-size: 1.875rem;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+p {
+  font-size: 1rem;
+  font-weight: 400;
+  color: $color-text;
+}

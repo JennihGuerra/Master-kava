@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600&family=Oswald:wght@400;500;600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <!-- Bootstrap: CSS CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
@@ -46,7 +46,7 @@
                 <!-- Botón: acceso directo a distribuidores -->
                 <a class="cta-button-secundario" href="./pages/contactanos.html">Quiero ser distribuidor</a>
 
-                <button class="cta-button-principal">Comprar café</button>
+                <a class="cta-button-principal" href="./pages/colecciones.html">Comprar café</a>
 
                 <div class="cart-icon" aria-label="Carrito (3 productos)">
                     <svg class="cart-icon__svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
@@ -154,46 +154,62 @@
     <section class="destacados"> <!-- productos o info destacada -->
         <h2 class="titulos-secciones"> Cafes que conquistan a nuestros clientes</h2>
 
-        <article class="producto-destacado">
-            <img src="./Assets/img/etiopia.png" alt="Bolsa de café Etiopía Idido de Káva">
-            <!-- Figma: badges de disponibilidad y tueste -->
-            <div class="card-badges">
-                <span class="badge badge--success">Disponible</span>
-                <span class="badge badge--gold">Tueste medio</span>
+        <!-- Figma: mismo componente "Product Card" (node 16:41) que colecciones.html -->
+        <article class="producto-destacado card-producto">
+            <figure class="card-producto__imagen">
+                <img src="./Assets/img/etiopia.png" alt="Bolsa de café Etiopía Idido de Káva">
+                <div class="card-badges">
+                    <span class="badge badge--success">Disponible</span>
+                    <span class="badge badge--gold">Tueste medio</span>
+                </div>
+            </figure>
+            <div class="card-producto__contenido">
+                <h3 class="card-producto__nombre">Etiopía Idido</h3>
+                <p> Floral, elegante y delicado. Ideal para compartir con amigos.</p>
+                <div class="card-producto__acciones">
+                    <button class="btn-primario" type="button">Agregar al carrito</button>
+                    <!-- Bootstrap: abre modal producto -->
+                    <button class="btn-secundario" type="button" data-bs-toggle="modal" data-bs-target="#modalEtiopia">Ver producto</button>
+                </div>
             </div>
-            <h3> Etiopía Idido</h3>
-            <p> Floral, elegante y delicado.<br>
-                 ideal para compartir con amigos</p>
-            <!-- Bootstrap: abre modal producto -->
-            <button class="cta-button-principal" type="button" data-bs-toggle="modal" data-bs-target="#modalEtiopia">Ver prducto </button>
         </article>
 
-          <article class="producto-destacado">
-            <img src="./Assets/img/colombia.png" alt="Bolsa de café Colombia El Paraíso de Káva">
-            <!-- Figma: badges de disponibilidad y tueste -->
-            <div class="card-badges">
-                <span class="badge badge--warning">Últimas unidades</span>
-                <span class="badge badge--gold">Tueste medio</span>
+          <article class="producto-destacado card-producto">
+            <figure class="card-producto__imagen">
+                <img src="./Assets/img/colombia.png" alt="Bolsa de café Colombia El Paraíso de Káva">
+                <div class="card-badges">
+                    <span class="badge badge--warning">Últimas unidades</span>
+                    <span class="badge badge--gold">Tueste medio</span>
+                </div>
+            </figure>
+            <div class="card-producto__contenido">
+                <h3 class="card-producto__nombre">Colombia El Paraíso</h3>
+                <p> Notas dulces de chocolate, frutos rojos y caramelo. Perfecto para todos los días.</p>
+                <div class="card-producto__acciones">
+                    <button class="btn-primario" type="button">Agregar al carrito</button>
+                    <!-- Bootstrap: abre modal producto -->
+                    <button class="btn-secundario" type="button" data-bs-toggle="modal" data-bs-target="#modalColombia">Ver producto</button>
+                </div>
             </div>
-            <h3> Colombia El Paraíso</h3>
-            <p> Notas dulces de chocolate, frutos rojos y caramelo.<br>
-                Perfecto para todos los días.</p>
-            <!-- Bootstrap: abre modal producto -->
-            <button class="cta-button-principal" type="button" data-bs-toggle="modal" data-bs-target="#modalColombia">Ver prducto </button>
         </article>
 
-          <article class="producto-destacado">
-            <img src="./Assets/img/indonesia.png" alt="Bolsa de café Sumatra Mandheling de Káva">
-            <!-- Figma: badges de disponibilidad y tueste -->
-            <div class="card-badges">
-                <span class="badge badge--error">Agotado</span>
-                <span class="badge badge--terracotta">Tueste oscuro</span>
+          <article class="producto-destacado card-producto">
+            <figure class="card-producto__imagen">
+                <img src="./Assets/img/indonesia.png" alt="Bolsa de café Sumatra Mandheling de Káva">
+                <div class="card-badges">
+                    <span class="badge badge--error">Agotado</span>
+                    <span class="badge badge--terracotta">Tueste oscuro</span>
+                </div>
+            </figure>
+            <div class="card-producto__contenido">
+                <h3 class="card-producto__nombre">Sumatra Mandheling</h3>
+                <p> Intenso, especiado y con gran cuerpo. Ideal para prensa francesa y espresso.</p>
+                <div class="card-producto__acciones">
+                    <button class="btn-primario" type="button">Agregar al carrito</button>
+                    <!-- Bootstrap: abre modal producto -->
+                    <button class="btn-secundario" type="button" data-bs-toggle="modal" data-bs-target="#modalIndonesia">Ver producto</button>
+                </div>
             </div>
-            <h3> Sumatra Mandheling</h3>
-            <p> Intenso, especiado y con gran cuerpo. <br>
-                 ideal para prensa francesa y espresso.</p>
-            <!-- Bootstrap: abre modal producto -->
-            <button class="cta-button-principal" type="button" data-bs-toggle="modal" data-bs-target="#modalIndonesia">Ver prducto </button>
         </article>
 
     </section>
@@ -276,16 +292,31 @@
 
         <h2 class="titulos-secciones"> ¿Por qué elegir Káva? </h2>
     <article class="beneficio">
+        <span class="beneficio__icono" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 8.5L6.5 12L13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </span>
         <h3> origen responsable </h3>
         <p> Trabajamos directamente con productores que cultivan café bajo prácticas sostenibles y comercio justo. </p>
     </article>
 
     <article class="beneficio">
+        <span class="beneficio__icono" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 8.5L6.5 12L13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </span>
         <h3> Tueste Artesanal </h3>
         <p> Cada lote se desarrolla individualmente para resaltar sus notas naturales sin sobreexponer el grano al calor. </p>
     </article>
 
     <article class="beneficio">
+        <span class="beneficio__icono" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 8.5L6.5 12L13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </span>
         <h3>  Calidad Garantizada </h3>
         <p> Solo seleccionamos microlotes que cumplen nuestros estándares de sabor, frescura y trazabilidad. </p>
     </article>

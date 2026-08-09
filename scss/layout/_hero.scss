@@ -1,0 +1,87 @@
+@use '../utilities/variables' as *;
+@use '../utilities/mixins' as *;
+
+.hero-content {
+  @extend %seccion-base;
+  background-image: linear-gradient(rgba(59, 36, 21, 0.55), rgba(59, 36, 21, 0.55)),
+    url('../Assets/img/hero.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: $color-text-inverse;
+  min-height: 100vh;
+  justify-content: center;
+
+  h1,
+  p {
+    color: $color-text-inverse;
+  }
+
+  &.hero-productos {
+    background-image: linear-gradient(rgba(59, 36, 21, 0.55), rgba(59, 36, 21, 0.55)),
+      url('../Assets/img/hero-nuestros-productos.jpg');
+  }
+
+  .cta-button-secundario {
+    color: $color-text-inverse;
+    border-color: $color-text-inverse;
+  }
+
+  &.hero-home {
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
+
+    @media (min-width: 768px) {
+      padding-left: 5rem;
+      padding-right: 5rem;
+    }
+
+    @media (min-width: 1024px) {
+      padding-left: 6rem;
+      padding-right: 6rem;
+    }
+  }
+}
+
+.hero-home__titulo {
+  font-size: 3.5rem;
+  line-height: 4rem;
+  letter-spacing: -0.5px;
+}
+
+.hero-home {
+  min-height: 100vh;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 0;
+
+  .hero-botones {
+    margin-top: 1rem;
+  }
+
+  &--1 {
+    background-image: linear-gradient(rgba(59, 36, 21, 0.55), rgba(59, 36, 21, 0.55)),
+      url('../Assets/img/hero-grupo-riendo.jpg');
+  }
+
+  &--2 {
+    background-image: linear-gradient(rgba(59, 36, 21, 0.55), rgba(59, 36, 21, 0.55)),
+      url('../Assets/img/hero-brindis-cenital.jpg');
+  }
+
+  &--3 {
+    background-image: linear-gradient(rgba(59, 36, 21, 0.55), rgba(59, 36, 21, 0.55)),
+      url('../Assets/img/hero-venta-cafe.jpg');
+  }
+}
+
+#heroCarousel {
+  margin-bottom: 2rem;
+}
+
+.hero-botones {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 1rem;
+}
