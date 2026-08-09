@@ -1,0 +1,14 @@
+// Animación nativa por keyframes: usada en el hero de cada página para
+// que el título, el texto y los botones aparezcan suavemente hacia
+// arriba en vez de mostrarse de golpe al cargar.
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

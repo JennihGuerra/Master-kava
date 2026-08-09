@@ -12,7 +12,41 @@
   flex-direction: column;
   gap: 1.5rem;
   padding: 2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
+}
+@media (min-width: 768px) {
+  .xq-káva,
+  .nuestra-filosofía,
+  .experiencia-káva,
+  .origenes,
+  .tipos-de-preparacion,
+  .coleccion-grupo,
+  .coleccion-final,
+  .formulario-contacto,
+  .galeria-origenes, .hero-content {
+    margin-bottom: 4.5rem;
+  }
+}
+@media (min-width: 1024px) {
+  .xq-káva,
+  .nuestra-filosofía,
+  .experiencia-káva,
+  .origenes,
+  .tipos-de-preparacion,
+  .coleccion-grupo,
+  .coleccion-final,
+  .formulario-contacto,
+  .galeria-origenes, .hero-content {
+    margin-bottom: 6rem;
+  }
+}
+
+.beneficio, .bloques-origenes, .card-producto {
+  transition: transform 0.25s ease-out, box-shadow 0.25s ease-out;
+}
+.beneficio:hover, .bloques-origenes:hover, .card-producto:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 24px rgba(36, 20, 7, 0.15);
 }
 
 * {
@@ -310,8 +344,19 @@ footer .logo-tagline {
   justify-content: center;
 }
 .hero-content h1,
+.hero-content p,
+.hero-content .hero-botones {
+  animation: fadeInUp 0.8s ease-out both;
+}
+.hero-content h1 {
+  color: #fcf8f1;
+}
 .hero-content p {
   color: #fcf8f1;
+  animation-delay: 0.15s;
+}
+.hero-content .hero-botones {
+  animation-delay: 0.3s;
 }
 .hero-content.hero-productos {
   background-image: linear-gradient(rgba(59, 36, 21, 0.55), rgba(59, 36, 21, 0.55)), url("../Assets/img/hero-nuestros-productos.jpg");
@@ -363,7 +408,17 @@ footer .logo-tagline {
 }
 
 #heroCarousel {
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
+}
+@media (min-width: 768px) {
+  #heroCarousel {
+    margin-bottom: 4.5rem;
+  }
+}
+@media (min-width: 1024px) {
+  #heroCarousel {
+    margin-bottom: 6rem;
+  }
 }
 
 .hero-botones {
@@ -381,6 +436,7 @@ footer .logo-tagline {
   font-weight: 600;
   text-decoration: none;
   display: inline-block;
+  transition: background-color 0.2s ease, transform 0.2s ease;
   background-color: #2f5c3b;
   color: #fcf8f1;
   border: none;
@@ -392,6 +448,7 @@ footer .logo-tagline {
 .cta-button-principal:active,
 .btn-primario:active {
   background-color: #241407;
+  transform: scale(0.97);
 }
 
 .cta-button-secundario,
@@ -402,6 +459,7 @@ footer .logo-tagline {
   font-weight: 600;
   text-decoration: none;
   display: inline-block;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
   background-color: transparent;
   color: #3b2415;
   border: 2px solid #3b2415;
@@ -415,6 +473,7 @@ footer .logo-tagline {
 .btn-secundario:active {
   background-color: #241407;
   color: #fcf8f1;
+  transform: scale(0.97);
 }
 
 .card-producto {
@@ -607,12 +666,65 @@ footer .logo-tagline {
   margin-bottom: 0;
 }
 
-.beneficio,
-.bloques-origenes {
+.beneficio {
   background-color: #ffffff;
   border: 1px solid #786e5c;
   border-radius: 16px;
   padding: 1.5rem;
+}
+
+.bloques-origenes {
+  background-color: #ffffff;
+  box-shadow: 0 4px 16px rgba(36, 20, 7, 0.1);
+  border-radius: 20px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+.bloques-origenes h3 {
+  margin: 0;
+  font-family: "Fraunces", serif;
+  font-weight: 600;
+  font-size: 1.75rem;
+  line-height: 2.25rem;
+  letter-spacing: -0.2px;
+  text-align: center;
+}
+.bloques-origenes__fila {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+.bloques-origenes figure {
+  margin: 0;
+  width: 100%;
+  max-width: 233px;
+  flex-shrink: 0;
+}
+.bloques-origenes figure img {
+  display: block;
+  width: 100%;
+  height: 163px;
+  object-fit: cover;
+  border-radius: 22px;
+}
+.bloques-origenes p {
+  margin: 0;
+  font-family: "Work Sans", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+@media (min-width: 768px) {
+  .bloques-origenes__fila {
+    flex-direction: row;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .bloques-origenes figure {
+    width: 233px;
+  }
 }
 
 .destacados {
@@ -621,7 +733,17 @@ footer .logo-tagline {
   grid-template-areas: "titulo" "card1" "card2" "card3";
   gap: 1.5rem;
   padding: 2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
+}
+@media (min-width: 768px) {
+  .destacados {
+    margin-bottom: 4.5rem;
+  }
+}
+@media (min-width: 1024px) {
+  .destacados {
+    margin-bottom: 6rem;
+  }
 }
 .destacados h2 {
   grid-area: titulo;
@@ -681,7 +803,17 @@ footer .logo-tagline {
   align-items: center;
   gap: 2rem;
   padding: 2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
+}
+@media (min-width: 768px) {
+  .presentacion-contacto {
+    margin-bottom: 4.5rem;
+  }
+}
+@media (min-width: 1024px) {
+  .presentacion-contacto {
+    margin-bottom: 6rem;
+  }
 }
 .presentacion-contacto figure,
 .presentacion-contacto p {
@@ -708,12 +840,22 @@ footer .logo-tagline {
   justify-content: center;
   gap: 2rem;
   padding: 2.5rem 2rem;
-  margin-bottom: 2rem;
   background-image: linear-gradient(rgba(59, 36, 21, 0.5), rgba(59, 36, 21, 0.5)), url("../Assets/img/hero-distribuidor-granos.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   min-height: 100vh;
+  margin-bottom: 3rem;
+}
+@media (min-width: 768px) {
+  .distribuidor-hero {
+    margin-bottom: 4.5rem;
+  }
+}
+@media (min-width: 1024px) {
+  .distribuidor-hero {
+    margin-bottom: 6rem;
+  }
 }
 .distribuidor-hero__contenido {
   flex: 1;
@@ -746,10 +888,20 @@ footer .logo-tagline {
   align-items: center;
   gap: 0.75rem;
   padding: 2.5rem 2rem;
-  margin-bottom: 2rem;
   border-radius: 40px;
   background-color: #2f5c3b;
   text-align: center;
+  margin-bottom: 3rem;
+}
+@media (min-width: 768px) {
+  .distribuidor-banner {
+    margin-bottom: 4.5rem;
+  }
+}
+@media (min-width: 1024px) {
+  .distribuidor-banner {
+    margin-bottom: 6rem;
+  }
 }
 .distribuidor-banner__texto, .distribuidor-banner__destacado {
   color: #fcf8f1;
@@ -875,7 +1027,17 @@ form select:focus {
 
 .filtro-productos {
   padding: 2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
+}
+@media (min-width: 768px) {
+  .filtro-productos {
+    margin-bottom: 4.5rem;
+  }
+}
+@media (min-width: 1024px) {
+  .filtro-productos {
+    margin-bottom: 6rem;
+  }
 }
 .filtro-productos h2 {
   font-size: 1rem;
@@ -991,6 +1153,17 @@ form select:focus {
 .campo-form__telefono input {
   flex: 1;
   min-width: 0;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,4 +1,5 @@
 @use '../utilities/variables' as *;
+@use '../utilities/mixins' as *;
 
 form {
   display: flex;
@@ -32,7 +33,7 @@ form {
 
 .filtro-productos {
   padding: 2rem;
-  margin-bottom: 2rem;
+  @include espaciado-seccion;
 
   h2 {
     font-size: 1rem;

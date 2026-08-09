@@ -12,9 +12,26 @@
   min-height: 100vh;
   justify-content: center;
 
+  // Animación nativa (@keyframes, ver components/_animaciones): el
+  // título, el texto y los botones entran con un fade hacia arriba,
+  // en cascada (cada uno un poco después que el anterior).
   h1,
+  p,
+  .hero-botones {
+    animation: fadeInUp 0.8s ease-out both;
+  }
+
+  h1 {
+    color: $color-text-inverse;
+  }
+
   p {
     color: $color-text-inverse;
+    animation-delay: 0.15s;
+  }
+
+  .hero-botones {
+    animation-delay: 0.3s;
   }
 
   &.hero-productos {
@@ -76,7 +93,7 @@
 }
 
 #heroCarousel {
-  margin-bottom: 2rem;
+  @include espaciado-seccion;
 }
 
 .hero-botones {

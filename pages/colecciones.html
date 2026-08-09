@@ -11,6 +11,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600&family=Oswald:wght@400;500;600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <!-- Bootstrap: CSS CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- AOS: libreria de animaciones al hacer scroll -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
 </head>
 
@@ -90,13 +92,13 @@
 
     <section class="coleccion-grupo"> <!-- colección: para compartir con amigos -->
 
-        <h2 class="titulos-secciones">Para compartir con amigos</h2>
+        <h2 class="titulos-secciones" data-aos="fade-up">Para compartir con amigos</h2>
         <p class="coleccion-grupo__descripcion">
             Formatos generosos y packs de degustación, pensados para
             disfrutar en buena compañía.
         </p>
 
-        <div class="grid-productos">
+        <div class="grid-productos" data-aos="fade-up">
 
             <article class="card-producto">
                 <figure class="card-producto__imagen">
@@ -226,13 +228,13 @@
 
     <section class="coleccion-grupo"> <!-- colección: amantes del café -->
 
-        <h2 class="titulos-secciones">Amantes del café</h2>
+        <h2 class="titulos-secciones" data-aos="fade-up">Amantes del café</h2>
         <p class="coleccion-grupo__descripcion">
             Cafés de origen único para quienes disfrutan explorar cada
             perfil de sabor en profundidad.
         </p>
 
-        <div class="grid-productos">
+        <div class="grid-productos" data-aos="fade-up">
 
             <article class="card-producto">
                 <figure class="card-producto__imagen">
@@ -374,13 +376,13 @@
 
     <section class="coleccion-grupo"> <!-- colección: accesorios -->
 
-        <h2 class="titulos-secciones">Accesorios</h2>
+        <h2 class="titulos-secciones" data-aos="fade-up">Accesorios</h2>
         <p class="coleccion-grupo__descripcion">
             Todo lo que necesitas para preparar un café de especialidad
             en casa, del filtro a la balanza.
         </p>
 
-        <div class="grid-productos">
+        <div class="grid-productos" data-aos="fade-up">
 
             <article class="card-producto">
                 <figure class="card-producto__imagen">
@@ -508,7 +510,7 @@
 
     <section class="galeria-origenes"> <!-- Bootstrap: sección galería -->
 
-        <h2 class="titulos-secciones">Descubre más orígenes</h2>
+        <h2 class="titulos-secciones" data-aos="fade-up">Descubre más orígenes</h2>
 
         <!-- Bootstrap: carousel -->
         <div id="carouselOrigenes" class="carousel slide carousel-dark" data-bs-ride="carousel">
@@ -566,7 +568,7 @@
 
     <section class="coleccion-final"> <!-- por qué elegir Káva -->
 
-        <h2 class="titulos-secciones"> ¿No sabes cual elegir? </h2>
+        <h2 class="titulos-secciones" data-aos="fade-up"> ¿No sabes cual elegir? </h2>
         <p> Descubre nuestro café recomendado según tu método de preparación. </p>
         <button class="cta-button-principal"> Encuentralo aquí </button>
 
@@ -620,6 +622,15 @@
     </footer> 
     <!-- Bootstrap: JS bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS: libreria de animaciones al hacer scroll -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 600,
+            once: true,
+            offset: 80
+        });
+    </script>
 </body>
    
 </html>

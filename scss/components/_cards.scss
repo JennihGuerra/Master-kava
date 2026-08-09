@@ -1,7 +1,9 @@
 @use '../utilities/variables' as *;
+@use '../utilities/mixins' as *;
 
 .card-producto {
-  background-color: #ffffff;
+  @extend %hover-lift;
+  background-color: $color-white;
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 1px 3px rgba(36, 20, 7, 0.08);

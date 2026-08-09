@@ -12,10 +12,50 @@
   text-decoration: none;
   display: inline-block;
 }
+
+// Mixin con parámetros (con valores por defecto): arma un "transition"
+// para una o varias propiedades a la vez, todas con la misma duración
+// y curva de easing. Ej: @include transicion(background-color);
+//        @include transicion((transform, box-shadow), 0.25s, ease-out);
+@mixin transicion($propiedades: all, $duracion: 0.2s, $easing: ease) {
+  $lista: ();
+
+  @each $propiedad in $propiedades {
+    $lista: append($lista, $propiedad $duracion $easing, comma);
+  }
+
+  transition: $lista;
+}
+
+// Mixin reutilizable para el espacio vertical ENTRE secciones: más aire
+// a medida que crece la pantalla (mobile-first).
+@mixin espaciado-seccion {
+  margin-bottom: 3rem;
+
+  @media (min-width: 768px) {
+    margin-bottom: 4.5rem;
+  }
+
+  @media (min-width: 1024px) {
+    margin-bottom: 6rem;
+  }
+}
+
 %seccion-base {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
   padding: 2rem;
-  margin-bottom: 2rem;
+  @include espaciado-seccion;
+}
+
+// Placeholder reutilizable (con @extend) para el efecto "se levanta" al
+// pasar el mouse: lo comparten .card-producto y .beneficio.
+%hover-lift {
+  @include transicion((transform, box-shadow), 0.25s, ease-out);
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 24px rgba(36, 20, 7, 0.15);
+  }
 }

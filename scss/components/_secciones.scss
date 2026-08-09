@@ -63,12 +63,77 @@
   margin-bottom: 0;
 }
 
-.beneficio,
-.bloques-origenes {
+.beneficio {
+  @extend %hover-lift;
   background-color: $color-white;
   border: 1px solid $color-text-muted;
   border-radius: 16px;
   padding: 1.5rem;
+}
+
+// Bloques de "De la finca a tu taza" (Orígenes): título centrado arriba
+// y, debajo, una fila con la foto a la izquierda y el texto a la derecha.
+// En mobile la fila se apila (imagen arriba, texto abajo).
+.bloques-origenes {
+  @extend %hover-lift;
+  background-color: $color-white;
+  box-shadow: 0 4px 16px rgba(36, 20, 7, 0.1);
+  border-radius: 20px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+
+  h3 {
+    margin: 0;
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 1.75rem;
+    line-height: 2.25rem;
+    letter-spacing: -0.2px;
+    text-align: center;
+  }
+
+  &__fila {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  figure {
+    margin: 0;
+    width: 100%;
+    max-width: 233px;
+    flex-shrink: 0;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 163px;
+      object-fit: cover;
+      border-radius: 22px;
+    }
+  }
+
+  p {
+    margin: 0;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    &__fila {
+      flex-direction: row;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    figure {
+      width: 233px;
+    }
+  }
 }
 
 .destacados {
@@ -81,7 +146,7 @@
     "card3";
   gap: 1.5rem;
   padding: 2rem;
-  margin-bottom: 2rem;
+  @include espaciado-seccion;
 
   h2 {
     grid-area: titulo;
@@ -141,7 +206,7 @@
   align-items: center;
   gap: 2rem;
   padding: 2rem;
-  margin-bottom: 2rem;
+  @include espaciado-seccion;
 
   figure,
   p {
@@ -167,13 +232,13 @@
   justify-content: center;
   gap: 2rem;
   padding: 2.5rem 2rem;
-  margin-bottom: 2rem;
   background-image: linear-gradient(rgba(59, 36, 21, 0.5), rgba(59, 36, 21, 0.5)),
     url('../Assets/img/hero-distribuidor-granos.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   min-height: 100vh;
+  @include espaciado-seccion;
 
   &__contenido {
     flex: 1;
@@ -207,10 +272,10 @@
   align-items: center;
   gap: 0.75rem;
   padding: 2.5rem 2rem;
-  margin-bottom: 2rem;
   border-radius: 40px;
   background-color: $color-accent;
   text-align: center;
+  @include espaciado-seccion;
 
   &__texto,
   &__destacado {

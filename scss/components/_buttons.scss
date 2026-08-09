@@ -4,6 +4,7 @@
 .cta-button-principal,
 .btn-primario {
   @include boton-base;
+  @include transicion((background-color, transform));
   background-color: $color-accent;
   color: $color-text-inverse;
   border: none;
@@ -14,12 +15,14 @@
 
   &:active {
     background-color: $color-bg-inverse;
+    transform: scale(0.97);
   }
 }
 
 .cta-button-secundario,
 .btn-secundario {
   @include boton-base;
+  @include transicion((background-color, color, transform));
   background-color: transparent;
   color: $color-primary;
   border: 2px solid $color-primary;
@@ -32,5 +35,6 @@
   &:active {
     background-color: $color-bg-inverse;
     color: $color-text-inverse;
+    transform: scale(0.97);
   }
 }

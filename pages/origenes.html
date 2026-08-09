@@ -11,6 +11,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600&family=Oswald:wght@400;500;600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <!-- Bootstrap: CSS CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- AOS: libreria de animaciones al hacer scroll -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
 </head>
 
@@ -72,57 +74,60 @@
         </section>
 
         <section class="origenes"> <!-- Sección de información general / proceso -->
-            <h2 class="titulos-secciones"> De la finca a tu taza </h2>
+            <h2 class="titulos-secciones" data-aos="fade-up"> De la finca a tu taza </h2>
 
-            <article class="bloques-origenes">
-                <figure>
-                    <img src="../Assets/img/historia.jpg" alt="Grano de café secándose al sol en una finca de origen">
-                    <figcaption>Así empieza todo: el grano recién cosechado.</figcaption>
-                </figure>
-                <h3> Introducción </h3>
-                <p> Cada origen tiene un clima diferente.<br>
-                    Cada suelo aporta características únicas.<br>
-                    Cada productor imprime su propia esencia.<br>
-                    Nuestro trabajo consiste en preservar toda esa identidad hasta llegar a tu taza.
-                </p>
-
+            <article class="bloques-origenes" data-aos="fade-up" data-aos-delay="0">
+                <h3>Introducción</h3>
+                <div class="bloques-origenes__fila">
+                    <figure>
+                        <img src="../Assets/img/cosecha-cafe.jpg" alt="Manos cosechando cerezas de café maduras directamente de la planta">
+                    </figure>
+                    <p> Cada origen tiene un clima diferente.<br>
+                        Cada suelo aporta características únicas.<br>
+                        Cada productor imprime su propia esencia.<br>
+                        Nuestro trabajo consiste en preservar toda esa identidad hasta llegar a tu taza.
+                    </p>
+                </div>
             </article>
 
-            <article class="bloques-origenes">
-                <figure>
-                    <img src="../Assets/img/historia.jpg" alt="Familia productora de café trabajando en la finca">
-                    <figcaption>Familias productoras que comparten nuestra visión.</figcaption>
-                </figure>
-                <h3> Seleccionamos personas, no proveedores. </h3>
-                <p> Visitamos fincas ubicadas en algunas de las regiones cafetaleras más reconocidas del mundo.
-                    Construimos relaciones a largo plazo con familias productoras que comparten nuestra visión de calidad, sostenibilidad y comercio justo.
-                    Cada compra representa una inversión directa en quienes hacen posible este café.
-                </p>
+            <article class="bloques-origenes" data-aos="fade-up" data-aos-delay="100">
+                <h3>Seleccionamos personas, no proveedores.</h3>
+                <div class="bloques-origenes__fila">
+                    <figure>
+                        <img src="../Assets/img/familias-cafeteras.jpg" alt="Productores cosechando cerezas de café a mano en la finca">
+                    </figure>
+                    <p> Visitamos fincas ubicadas en algunas de las regiones cafetaleras más reconocidas del mundo.
+                        Construimos relaciones a largo plazo con familias productoras que comparten nuestra visión de calidad, sostenibilidad y comercio justo.
+                        Cada compra representa una inversión directa en quienes hacen posible este café.
+                    </p>
+                </div>
             </article>
 
-            <article class="bloques-origenes">
-                <figure>
-                    <img src="../Assets/img/historia.jpg" alt="Tostadora de café en pleno proceso de tueste artesanal">
-                    <figcaption>Curvas de tueste diseñadas para cada origen.</figcaption>
-                </figure>
-                <h3> El arte del tueste. </h3>
-                <p> No existen recetas universales.
-                    Cada origen necesita un perfil de tueste distinto.
-                    Nuestros lotes se desarrollan lentamente mediante curvas de temperatura cuidadosamente
-                    diseñadas para conservar aromas florales, notas frutales y dulzores naturales.
-                </p>
+            <article class="bloques-origenes" data-aos="fade-up" data-aos-delay="200">
+                <h3>El arte del tueste.</h3>
+                <div class="bloques-origenes__fila">
+                    <figure>
+                        <img src="../Assets/img/tueste-cafe.jpg" alt="Granos de café siendo vertidos en una tostadora artesanal">
+                    </figure>
+                    <p> No existen recetas universales.
+                        Cada origen necesita un perfil de tueste distinto.
+                        Nuestros lotes se desarrollan lentamente mediante curvas de temperatura cuidadosamente
+                        diseñadas para conservar aromas florales, notas frutales y dulzores naturales.
+                    </p>
+                </div>
             </article>
 
-            <article class="bloques-origenes">
-                <figure>
-                    <img src="../Assets/img/historia.jpg" alt="Bolsas de café Káva selladas y etiquetadas listas para envío">
-                    <figcaption>Empacado pocas horas después del tueste.</figcaption>
-                </figure>
-                <h3>  Del origen hasta tu mesa. </h3>
-                <p> Empacamos el café pocas horas después del tueste para conservar toda su frescura.
-                    Cada bolsa incluye fecha de tueste, región, variedad, proceso y perfil sensorial.
-                    Porque creemos que conocer el origen transforma la experiencia.
-                </p>
+            <article class="bloques-origenes" data-aos="fade-up" data-aos-delay="300">
+                <h3>Del origen hasta tu mesa.</h3>
+                <div class="bloques-origenes__fila">
+                    <figure>
+                        <img src="../Assets/img/origen-mesa.jpg" alt="Empaques de café Káva: bolsa, frasco, lata y caja con cápsulas listos para el consumidor">
+                    </figure>
+                    <p> Empacamos el café pocas horas después del tueste para conservar toda su frescura.
+                        Cada bolsa incluye fecha de tueste, región, variedad, proceso y perfil sensorial.
+                        Porque creemos que conocer el origen transforma la experiencia.
+                    </p>
+                </div>
             </article>
 
             <button class="cta-button-principal"> Descubre la colección completa</button>
@@ -177,6 +182,15 @@
     </footer> 
     <!-- Bootstrap: JS bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS: libreria de animaciones al hacer scroll -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 600,
+            once: true,
+            offset: 80
+        });
+    </script>
 </body>
    
 </html>
