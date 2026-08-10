@@ -4,7 +4,7 @@
 .hero-content {
   @extend %seccion-base;
   background-image: linear-gradient(rgba(59, 36, 21, 0.55), rgba(59, 36, 21, 0.55)),
-    url('../Assets/img/hero.jpg');
+    url('../Assets/img/hero-cafe-molido.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -12,31 +12,45 @@
   min-height: 100vh;
   justify-content: center;
 
-  // Animación nativa (@keyframes, ver components/_animaciones): el
-  // título, el texto y los botones entran con un fade hacia arriba,
-  // en cascada (cada uno un poco después que el anterior).
+  // Animación nativa (@keyframes, ver components/_animaciones): la
+  // etiqueta, el título, el texto y los botones entran con un fade hacia
+  // arriba, en cascada (cada uno un poco después que el anterior).
+  .hero-home__etiqueta,
   h1,
   p,
   .hero-botones {
     animation: fadeInUp 0.8s ease-out both;
   }
 
+  // Mismo tamaño de título en todos los heroes del sitio: el que ya usa
+  // el de Inicio (.hero-home__titulo), así quedan parejos aunque esta
+  // página no tenga esa clase (colecciones, orígenes, guía de
+  // preparación, nuestros productos...).
   h1 {
     color: $color-text-inverse;
+    font-size: 3.5rem;
+    line-height: 4rem;
+    letter-spacing: -0.5px;
+    animation-delay: 0.1s;
   }
 
   p {
     color: $color-text-inverse;
-    animation-delay: 0.15s;
+    animation-delay: 0.25s;
   }
 
   .hero-botones {
-    animation-delay: 0.3s;
+    animation-delay: 0.4s;
   }
 
   &.hero-productos {
     background-image: linear-gradient(rgba(59, 36, 21, 0.55), rgba(59, 36, 21, 0.55)),
       url('../Assets/img/hero-nuestros-productos.jpg');
+  }
+
+  &.hero-origenes {
+    background-image: linear-gradient(rgba(59, 36, 21, 0.55), rgba(59, 36, 21, 0.55)),
+      url('../Assets/img/hero-origenes.jpg');
   }
 
   .cta-button-secundario {
@@ -66,11 +80,47 @@
   letter-spacing: -0.5px;
 }
 
+.hero-home__etiqueta {
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+}
+
 .hero-home {
   min-height: 100vh;
   justify-content: center;
   gap: 0.75rem;
   margin-bottom: 0;
+
+  // Tipografía blanca (no el crema $color-text-inverse) en las 3 instancias
+  // del carousel de inicio, para mayor contraste sobre las fotos de fondo.
+  // Se apunta a la clase .hero-home__titulo (no al tag h1) porque el slide 1
+  // usa <h1> y los slides 2 y 3 usan <h2> (por jerarquía SEO: un solo h1 por
+  // página), pero los tres deben verse igual.
+  .hero-home__titulo,
+  p {
+    color: $color-white;
+  }
+
+  // La etiqueta va en el verde salvia de la marca (mismo tono que ya usa
+  // .logo-tagline en el footer) para diferenciarla del resto del texto,
+  // que es blanco. Como también es un <p>, necesita más especificidad
+  // que la regla "p" de arriba para no heredar el blanco.
+  .hero-home__etiqueta {
+    color: $color-secondary;
+  }
+
+  .cta-button-principal,
+  .cta-button-secundario {
+    color: $color-white;
+  }
+
+  .cta-button-secundario {
+    border-color: $color-white;
+  }
 
   .hero-botones {
     margin-top: 1rem;
@@ -94,6 +144,23 @@
 
 #heroCarousel {
   @include espaciado-seccion;
+
+  // Bootstrap posiciona las flechas del carousel ocupando el 15% del ancho
+  // a cada lado, sin importar el padding del contenido. Achicamos esa zona
+  // para que coincida exactamente con el padding de .hero-home, así el
+  // título, el texto y los botones nunca quedan por debajo de las flechas.
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 3.5rem;
+
+    @media (min-width: 768px) {
+      width: 5rem;
+    }
+
+    @media (min-width: 1024px) {
+      width: 6rem;
+    }
+  }
 }
 
 .hero-botones {
@@ -101,4 +168,11 @@
   flex-wrap: wrap;
   justify-content: flex-end;
   gap: 1rem;
+}
+
+// Modificador para pegar el hero a la sección siguiente (sin el margen
+// que le da %seccion-base), para cuando esa sección va con su propio
+// fondo de color justo debajo, como el compromiso ambiental en Orígenes.
+.hero-content--pegado {
+  margin-bottom: 0;
 }

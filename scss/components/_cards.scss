@@ -11,11 +11,16 @@
   &__imagen {
     position: relative;
     background-color: $color-bg-surface-alt;
+    // Espacio arriba para que las etiquetas (position: absolute) tengan su
+    // propia franja y no choquen con la bolsa de café.
+    padding-top: 2.75rem;
 
     img {
       display: block;
-      width: 150px;
-      height: 280px;
+      // Imagen más chica que antes (era 150x280) para que quede más aire
+      // entre el borde superior y las etiquetas.
+      width: 120px;
+      height: 220px;
       object-fit: contain;
       margin: 0 auto;
     }
@@ -103,4 +108,4 @@
 .badge--neutral { background-color: $color-bg-surface-alt; color: $color-text-secondary; }
 .badge--gold { background-color: $color-accent-gold; color: $color-bg-inverse; }
 .badge--terracotta { background-color: $color-accent-terracotta; color: $color-text-inverse; }
-.badge--sage { background-color: $color-secondary; color: $color-accent; }
+.badge--sage { background-color: $color-secondary; color: $color-bg-inverse; }

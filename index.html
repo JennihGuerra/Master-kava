@@ -5,7 +5,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Káva | Especialidad en cada grano</title>
+    <title>Káva | Café de Especialidad de Origen Único, Tostado Artesanal</title>
+    <meta name="description" content="Café de especialidad de pequeños productores, tostado artesanalmente en microlotes. Descubrí los orígenes, la colección completa y comprá café online con Káva.">
+    <meta name="keywords" content="café de especialidad, café artesanal, tueste artesanal, café de origen, comprar café online, Káva">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600&family=Oswald:wght@400;500;600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -101,7 +103,7 @@
                 <!-- Slide 2: imagen 1 (brindis cenital). TODO: contenido propio más adelante -->
                 <div class="carousel-item">
                     <div class="hero-content hero-home hero-home--2">
-                        <h1 class="hero-home__titulo"> Detener el tiempo <br> para conectar con lo esencial. </h1>
+                        <h2 class="hero-home__titulo"> Detener el tiempo <br> para conectar con lo esencial. </h2>
 
                         <p>
                             Cada taza cuenta una historia.
@@ -121,7 +123,7 @@
                 <!-- Slide 3: TODO — falta la imagen 3 (laptop + café), usa la 1 de relleno -->
                 <div class="carousel-item">
                     <div class="hero-content hero-home hero-home--3">
-                        <h1 class="hero-home__titulo"> Detener el tiempo <br> para conectar con lo esencial. </h1>
+                        <h2 class="hero-home__titulo"> Detener el tiempo <br> para conectar con lo esencial. </h2>
 
                         <p>
                             Cada taza cuenta una historia.
@@ -324,22 +326,130 @@
     </article>
 
     </section>
-        
-    <section class="nuestra-filosofía"> <!-- nuestra filosofia de la empresa -->
 
-        <h2 class="titulos-secciones" data-aos="fade-up"> Un café excepcional comienza mucho antes de la taza.</h2>
-        <p> Cada cosecha representa meses de trabajo, clima, dedicación <br>
-            y conocimiento. Nosotros respetamos ese proceso.<br>
-            Desde la finca hasta el tueste, cada decisión busca conservar <br>
-            la identidad del café para que puedas descubrir sabores auténticos en cada preparación.
-          </p>
+    <section class="distribuidores"> <!-- buscador de distribuidores/tiendas Káva en Chile -->
+
+        <h2 class="titulos-secciones" data-aos="fade-up">Encontrá tu distribuidor Káva</h2>
+        <p data-aos="fade-up">Estamos presentes en distintas regiones de Chile. Buscá tu tienda o filtrá por región para encontrar la más cercana.</p>
+
+        <div class="distribuidores__buscador" data-aos="fade-up">
+            <label for="buscar-distribuidor" class="visually-hidden">Buscar tienda o región</label>
+            <!-- HTML nativo: el atributo "list" conecta el input con el datalist
+                 de abajo y el navegador arma el autocompletado solo, sin JS. -->
+            <input type="search" id="buscar-distribuidor" name="buscar-distribuidor" list="lista-distribuidores" placeholder="Buscar tienda o región...">
+            <datalist id="lista-distribuidores">
+                <option value="Káva Providencia">
+                <option value="Káva Lastarria">
+                <option value="Káva Valparaíso">
+                <option value="Káva Concepción">
+                <option value="Káva Temuco">
+                <option value="Káva Antofagasta">
+                <option value="Káva Puerto Montt">
+                <option value="Región Metropolitana">
+                <option value="Región de Valparaíso">
+                <option value="Región del Biobío">
+                <option value="Región de La Araucanía">
+                <option value="Región de Antofagasta">
+                <option value="Región de Los Lagos">
+            </datalist>
+        </div>
+
+        <!-- Filtro por región: son anclas que llevan directo a cada grupo de
+             abajo (sin JS), así se puede ir a la región más cercana rápido. -->
+        <nav class="distribuidores__filtros" aria-label="Filtrar por región" data-aos="fade-up">
+            <a href="#region-metropolitana" class="chip-filtro">Metropolitana</a>
+            <a href="#region-valparaiso" class="chip-filtro">Valparaíso</a>
+            <a href="#region-biobio" class="chip-filtro">Biobío</a>
+            <a href="#region-araucania" class="chip-filtro">La Araucanía</a>
+            <a href="#region-antofagasta" class="chip-filtro">Antofagasta</a>
+            <a href="#region-los-lagos" class="chip-filtro">Los Lagos</a>
+        </nav>
+
+        <!-- Sin mapa, todas las tiendas van en una sola grilla: 4 tarjetas
+             arriba y 3 abajo. Cada tarjeta indica su región (ya no hay un
+             título de grupo por región), y las anclas de los chips de
+             arriba apuntan directo a la primera tarjeta de cada una. -->
+        <div class="distribuidores__grid" data-aos="fade-up">
+            <article class="card-distribuidor" id="region-metropolitana">
+                <div class="card-distribuidor__header">
+                    <h4>Káva Providencia</h4>
+                    <span class="badge badge--success">Abierto</span>
+                </div>
+                <p class="card-distribuidor__region">Región Metropolitana</p>
+                <p class="card-distribuidor__direccion">Av. Providencia 1340, Providencia, Santiago</p>
+                <p class="card-distribuidor__horario">Lun a Sáb: 9:00 a 20:00</p>
+            </article>
+
+            <article class="card-distribuidor">
+                <div class="card-distribuidor__header">
+                    <h4>Káva Lastarria</h4>
+                    <span class="badge badge--success">Abierto</span>
+                </div>
+                <p class="card-distribuidor__region">Región Metropolitana</p>
+                <p class="card-distribuidor__direccion">José Victorino Lastarria 90, Santiago Centro</p>
+                <p class="card-distribuidor__horario">Lun a Dom: 10:00 a 21:00</p>
+            </article>
+
+            <article class="card-distribuidor" id="region-valparaiso">
+                <div class="card-distribuidor__header">
+                    <h4>Káva Valparaíso</h4>
+                    <span class="badge badge--error">Cerrado</span>
+                </div>
+                <p class="card-distribuidor__region">Región de Valparaíso</p>
+                <p class="card-distribuidor__direccion">Pasaje Bavestrello 152, Cerro Alegre, Valparaíso</p>
+                <p class="card-distribuidor__horario">Mar a Dom: 10:00 a 19:00</p>
+            </article>
+
+            <article class="card-distribuidor" id="region-biobio">
+                <div class="card-distribuidor__header">
+                    <h4>Káva Concepción</h4>
+                    <span class="badge badge--success">Abierto</span>
+                </div>
+                <p class="card-distribuidor__region">Región del Biobío</p>
+                <p class="card-distribuidor__direccion">Barros Arana 640, Concepción</p>
+                <p class="card-distribuidor__horario">Lun a Sáb: 9:30 a 19:30</p>
+            </article>
+
+            <article class="card-distribuidor" id="region-araucania">
+                <div class="card-distribuidor__header">
+                    <h4>Káva Temuco</h4>
+                    <span class="badge badge--error">Cerrado</span>
+                </div>
+                <p class="card-distribuidor__region">Región de La Araucanía</p>
+                <p class="card-distribuidor__direccion">Av. Alemania 0421, Temuco</p>
+                <p class="card-distribuidor__horario">Lun a Sáb: 9:00 a 18:30</p>
+            </article>
+
+            <article class="card-distribuidor" id="region-antofagasta">
+                <div class="card-distribuidor__header">
+                    <h4>Káva Antofagasta</h4>
+                    <span class="badge badge--success">Abierto</span>
+                </div>
+                <p class="card-distribuidor__region">Región de Antofagasta</p>
+                <p class="card-distribuidor__direccion">Av. Grecia 1780, Antofagasta</p>
+                <p class="card-distribuidor__horario">Lun a Sáb: 10:00 a 20:00</p>
+            </article>
+
+            <article class="card-distribuidor" id="region-los-lagos">
+                <div class="card-distribuidor__header">
+                    <h4>Káva Puerto Montt</h4>
+                    <span class="badge badge--success">Abierto</span>
+                </div>
+                <p class="card-distribuidor__region">Región de Los Lagos</p>
+                <p class="card-distribuidor__direccion">Av. Diego Portales 1201, Puerto Montt</p>
+                <p class="card-distribuidor__horario">Lun a Sáb: 9:00 a 19:00</p>
+            </article>
+        </div>
 
     </section>
 
-    <section class="experiencia-káva" data-aos="fade-up"> <!-- experiencia de la empresa -->
+    <section class="nuestra-filosofía" data-aos="fade-up"> <!-- nuestra filosofia + experiencia de la empresa, juntas en un mismo contenedor centrado -->
+
+        <h2 class="titulos-secciones"> Un café excepcional comienza mucho antes de la taza.</h2>
         <p> "No vendemos simplemente café. <br>
              Creamos momentos para detenerse, compartir y disfrutar."
         </p>
+
     </section>
 
     <footer> <!-- pie de pagina -->

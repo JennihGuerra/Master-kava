@@ -5,7 +5,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Káva | Especialidad en cada grano</title>
+    <title>Káva | Nuestros Orígenes: De la Finca a tu Taza</title>
+    <meta name="description" content="Conocé el proceso detrás de cada taza Káva: selección de fincas, tueste artesanal y nuestro compromiso ambiental con envases reciclables y comercio directo.">
+    <meta name="keywords" content="origen del café, café sostenible, comercio directo café, tueste artesanal, compromiso ambiental, café de finca">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600&family=Oswald:wght@400;500;600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -65,7 +67,7 @@
 
     <main> <!-- contenido principal de la pagina -->
 
-        <section class="hero-content"> <!-- Sección de presentación -->
+        <section class="hero-content hero-content--pegado hero-origenes"> <!-- Sección de presentación -->
             <h1> Nuestros orígenes </h1>
             <p>
                 Cada bolsa de Káva tiene una historia detrás: una finca, un clima, una familia productora.
@@ -73,64 +75,89 @@
             </p>
         </section>
 
+        <section class="compromiso-ambiental" data-aos="fade-up"> <!-- compromiso ambiental -->
+            <p class="compromiso-ambiental__etiqueta">Compromiso ambiental</p>
+            <h2 class="titulos-secciones">Cuidamos el café tanto como cuidamos lo que lo envuelve</h2>
+
+            <div class="compromiso-ambiental__grid">
+                <article class="card-compromiso">
+                    <p class="card-compromiso__etiqueta">Envases</p>
+                    <h3>Empaques 100% reciclables</h3>
+                    <p>Nuestras bolsas de molido y grano son de papel kraft reciclable, con ventana biodegradable para ver el café sin usar plástico de más.</p>
+                </article>
+
+                <article class="card-compromiso">
+                    <p class="card-compromiso__etiqueta">Cápsulas</p>
+                    <h3>Liners compostables</h3>
+                    <p>Las cápsulas Káva usan aluminio reciclado y liners compostables, para que ni el ritual más rápido del día deje huella.</p>
+                </article>
+
+                <article class="card-compromiso">
+                    <p class="card-compromiso__etiqueta">Origen</p>
+                    <h3>Comercio directo</h3>
+                    <p>Compramos directo a caficultores, sin intermediarios, para pagar mejor y conocer exactamente de dónde viene cada saco.</p>
+                </article>
+
+                <article class="card-compromiso">
+                    <p class="card-compromiso__etiqueta">Logística</p>
+                    <h3>Tueste en lotes pequeños</h3>
+                    <p>Tostamos cerca de nuestros puntos de distribución en Chile para reducir el transporte y mantener el café siempre fresco.</p>
+                </article>
+            </div>
+        </section>
+
         <section class="origenes"> <!-- Sección de información general / proceso -->
             <h2 class="titulos-secciones" data-aos="fade-up"> De la finca a tu taza </h2>
 
-            <article class="bloques-origenes" data-aos="fade-up" data-aos-delay="0">
-                <h3>Introducción</h3>
-                <div class="bloques-origenes__fila">
-                    <figure>
-                        <img src="../Assets/img/cosecha-cafe.jpg" alt="Manos cosechando cerezas de café maduras directamente de la planta">
-                    </figure>
-                    <p> Cada origen tiene un clima diferente.<br>
-                        Cada suelo aporta características únicas.<br>
-                        Cada productor imprime su propia esencia.<br>
-                        Nuestro trabajo consiste en preservar toda esa identidad hasta llegar a tu taza.
-                    </p>
+            <div class="timeline-origenes">
+                <div class="timeline-origenes__item timeline-origenes__item--izq" data-aos="fade-up" data-aos-delay="0">
+                    <div class="timeline-origenes__contenido">
+                        <h3>Introducción</h3>
+                        <p> Cada origen tiene un clima diferente.
+                            Cada suelo aporta características únicas.
+                            Cada productor imprime su propia esencia.
+                            Nuestro trabajo consiste en preservar toda esa identidad hasta llegar a tu taza.
+                        </p>
+                    </div>
+                    <div class="timeline-origenes__marcador">01</div>
                 </div>
-            </article>
 
-            <article class="bloques-origenes" data-aos="fade-up" data-aos-delay="100">
-                <h3>Seleccionamos personas, no proveedores.</h3>
-                <div class="bloques-origenes__fila">
-                    <figure>
-                        <img src="../Assets/img/familias-cafeteras.jpg" alt="Productores cosechando cerezas de café a mano en la finca">
-                    </figure>
-                    <p> Visitamos fincas ubicadas en algunas de las regiones cafetaleras más reconocidas del mundo.
-                        Construimos relaciones a largo plazo con familias productoras que comparten nuestra visión de calidad, sostenibilidad y comercio justo.
-                        Cada compra representa una inversión directa en quienes hacen posible este café.
-                    </p>
+                <div class="timeline-origenes__item timeline-origenes__item--der" data-aos="fade-up" data-aos-delay="100">
+                    <div class="timeline-origenes__marcador">02</div>
+                    <div class="timeline-origenes__contenido">
+                        <h3>Seleccionamos personas, no proveedores.</h3>
+                        <p> Visitamos fincas ubicadas en algunas de las regiones cafetaleras más reconocidas del mundo.
+                            Construimos relaciones a largo plazo con familias productoras que comparten nuestra visión de calidad, sostenibilidad y comercio justo.
+                            Cada compra representa una inversión directa en quienes hacen posible este café.
+                        </p>
+                    </div>
                 </div>
-            </article>
 
-            <article class="bloques-origenes" data-aos="fade-up" data-aos-delay="200">
-                <h3>El arte del tueste.</h3>
-                <div class="bloques-origenes__fila">
-                    <figure>
-                        <img src="../Assets/img/tueste-cafe.jpg" alt="Granos de café siendo vertidos en una tostadora artesanal">
-                    </figure>
-                    <p> No existen recetas universales.
-                        Cada origen necesita un perfil de tueste distinto.
-                        Nuestros lotes se desarrollan lentamente mediante curvas de temperatura cuidadosamente
-                        diseñadas para conservar aromas florales, notas frutales y dulzores naturales.
-                    </p>
+                <div class="timeline-origenes__item timeline-origenes__item--izq" data-aos="fade-up" data-aos-delay="200">
+                    <div class="timeline-origenes__contenido">
+                        <h3>El arte del tueste.</h3>
+                        <p> No existen recetas universales.
+                            Cada origen necesita un perfil de tueste distinto.
+                            Nuestros lotes se desarrollan lentamente mediante curvas de temperatura cuidadosamente
+                            diseñadas para conservar aromas florales, notas frutales y dulzores naturales.
+                        </p>
+                    </div>
+                    <div class="timeline-origenes__marcador">03</div>
                 </div>
-            </article>
 
-            <article class="bloques-origenes" data-aos="fade-up" data-aos-delay="300">
-                <h3>Del origen hasta tu mesa.</h3>
-                <div class="bloques-origenes__fila">
-                    <figure>
-                        <img src="../Assets/img/origen-mesa.jpg" alt="Empaques de café Káva: bolsa, frasco, lata y caja con cápsulas listos para el consumidor">
-                    </figure>
-                    <p> Empacamos el café pocas horas después del tueste para conservar toda su frescura.
-                        Cada bolsa incluye fecha de tueste, región, variedad, proceso y perfil sensorial.
-                        Porque creemos que conocer el origen transforma la experiencia.
-                    </p>
+                <div class="timeline-origenes__item timeline-origenes__item--der" data-aos="fade-up" data-aos-delay="300">
+                    <div class="timeline-origenes__marcador">04</div>
+                    <div class="timeline-origenes__contenido">
+                        <h3>Del origen hasta tu mesa.</h3>
+                        <p> Empacamos el café pocas horas después del tueste para conservar toda su frescura.
+                            Cada bolsa incluye fecha de tueste, región, variedad, proceso y perfil sensorial.
+                            Porque creemos que conocer el origen transforma la experiencia.
+                        </p>
+                    </div>
                 </div>
-            </article>
+            </div>
 
-            <button class="cta-button-principal"> Descubre la colección completa</button>
+            <a class="cta-button-principal origenes__cta" href="./colecciones.html">Descubre nuestros productos</a>
 
         </section>
 

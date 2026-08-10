@@ -1,8 +1,9 @@
 @charset "UTF-8";
 .xq-káva,
 .nuestra-filosofía,
-.experiencia-káva,
+.distribuidores,
 .origenes,
+.compromiso-ambiental,
 .tipos-de-preparacion,
 .coleccion-grupo,
 .coleccion-final,
@@ -17,8 +18,9 @@
 @media (min-width: 768px) {
   .xq-káva,
   .nuestra-filosofía,
-  .experiencia-káva,
+  .distribuidores,
   .origenes,
+  .compromiso-ambiental,
   .tipos-de-preparacion,
   .coleccion-grupo,
   .coleccion-final,
@@ -30,8 +32,9 @@
 @media (min-width: 1024px) {
   .xq-káva,
   .nuestra-filosofía,
-  .experiencia-káva,
+  .distribuidores,
   .origenes,
+  .compromiso-ambiental,
   .tipos-de-preparacion,
   .coleccion-grupo,
   .coleccion-final,
@@ -41,10 +44,10 @@
   }
 }
 
-.beneficio, .bloques-origenes, .card-producto {
+.beneficio, .card-distribuidor, .card-producto {
   transition: transform 0.25s ease-out, box-shadow 0.25s ease-out;
 }
-.beneficio:hover, .bloques-origenes:hover, .card-producto:hover {
+.beneficio:hover, .card-distribuidor:hover, .card-producto:hover {
   transform: translateY(-6px);
   box-shadow: 0 10px 24px rgba(36, 20, 7, 0.15);
 }
@@ -335,7 +338,7 @@ footer .logo-tagline {
 }
 
 .hero-content {
-  background-image: linear-gradient(rgba(59, 36, 21, 0.55), rgba(59, 36, 21, 0.55)), url("../Assets/img/hero.jpg");
+  background-image: linear-gradient(rgba(59, 36, 21, 0.55), rgba(59, 36, 21, 0.55)), url("../Assets/img/hero-cafe-molido.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -343,6 +346,7 @@ footer .logo-tagline {
   min-height: 100vh;
   justify-content: center;
 }
+.hero-content .hero-home__etiqueta,
 .hero-content h1,
 .hero-content p,
 .hero-content .hero-botones {
@@ -350,16 +354,23 @@ footer .logo-tagline {
 }
 .hero-content h1 {
   color: #fcf8f1;
+  font-size: 3.5rem;
+  line-height: 4rem;
+  letter-spacing: -0.5px;
+  animation-delay: 0.1s;
 }
 .hero-content p {
   color: #fcf8f1;
-  animation-delay: 0.15s;
+  animation-delay: 0.25s;
 }
 .hero-content .hero-botones {
-  animation-delay: 0.3s;
+  animation-delay: 0.4s;
 }
 .hero-content.hero-productos {
   background-image: linear-gradient(rgba(59, 36, 21, 0.55), rgba(59, 36, 21, 0.55)), url("../Assets/img/hero-nuestros-productos.jpg");
+}
+.hero-content.hero-origenes {
+  background-image: linear-gradient(rgba(59, 36, 21, 0.55), rgba(59, 36, 21, 0.55)), url("../Assets/img/hero-origenes.jpg");
 }
 .hero-content .cta-button-secundario {
   color: #fcf8f1;
@@ -388,11 +399,34 @@ footer .logo-tagline {
   letter-spacing: -0.5px;
 }
 
+.hero-home__etiqueta {
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+}
+
 .hero-home {
   min-height: 100vh;
   justify-content: center;
   gap: 0.75rem;
   margin-bottom: 0;
+}
+.hero-home .hero-home__titulo,
+.hero-home p {
+  color: #ffffff;
+}
+.hero-home .hero-home__etiqueta {
+  color: #afcba0;
+}
+.hero-home .cta-button-principal,
+.hero-home .cta-button-secundario {
+  color: #ffffff;
+}
+.hero-home .cta-button-secundario {
+  border-color: #ffffff;
 }
 .hero-home .hero-botones {
   margin-top: 1rem;
@@ -420,12 +454,32 @@ footer .logo-tagline {
     margin-bottom: 6rem;
   }
 }
+#heroCarousel .carousel-control-prev,
+#heroCarousel .carousel-control-next {
+  width: 3.5rem;
+}
+@media (min-width: 768px) {
+  #heroCarousel .carousel-control-prev,
+  #heroCarousel .carousel-control-next {
+    width: 5rem;
+  }
+}
+@media (min-width: 1024px) {
+  #heroCarousel .carousel-control-prev,
+  #heroCarousel .carousel-control-next {
+    width: 6rem;
+  }
+}
 
 .hero-botones {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
   gap: 1rem;
+}
+
+.hero-content--pegado {
+  margin-bottom: 0;
 }
 
 .cta-button-principal,
@@ -485,11 +539,12 @@ footer .logo-tagline {
 .card-producto__imagen {
   position: relative;
   background-color: #f6eee0;
+  padding-top: 2.75rem;
 }
 .card-producto__imagen img {
   display: block;
-  width: 150px;
-  height: 280px;
+  width: 120px;
+  height: 220px;
   object-fit: contain;
   margin: 0 auto;
 }
@@ -596,14 +651,15 @@ footer .logo-tagline {
 
 .badge--sage {
   background-color: #afcba0;
-  color: #2f5c3b;
+  color: #241407;
 }
 
 @media (min-width: 768px) {
   .xq-káva,
   .nuestra-filosofía,
-  .experiencia-káva,
+  .distribuidores,
   .origenes,
+  .compromiso-ambiental,
   .tipos-de-preparacion,
   .coleccion-grupo,
   .coleccion-final,
@@ -616,8 +672,9 @@ footer .logo-tagline {
 @media (min-width: 1024px) {
   .xq-káva,
   .nuestra-filosofía,
-  .experiencia-káva,
+  .distribuidores,
   .origenes,
+  .compromiso-ambiental,
   .tipos-de-preparacion,
   .coleccion-grupo,
   .coleccion-final,
@@ -628,9 +685,37 @@ footer .logo-tagline {
   }
 }
 
+.nuestra-filosofía {
+  align-items: center;
+  text-align: center;
+}
+.nuestra-filosofía .titulos-secciones,
+.nuestra-filosofía p {
+  max-width: 42rem;
+}
+
 .xq-káva {
   background-color: #2f5c3b;
+  background-image: linear-gradient(rgba(47, 92, 59, 0.65), rgba(47, 92, 59, 0.65)), url("../Assets/img/xq-kava-productos-sostenibles.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   gap: 1rem;
+  justify-content: center;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+@media (min-width: 768px) {
+  .xq-káva {
+    padding-top: 5.5rem;
+    padding-bottom: 5.5rem;
+  }
+}
+@media (min-width: 1024px) {
+  .xq-káva {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+  }
 }
 .xq-káva .titulos-secciones {
   color: #fcf8f1;
@@ -662,10 +747,6 @@ footer .logo-tagline {
   margin-bottom: 0.25rem;
 }
 
-.experiencia-káva {
-  margin-bottom: 0;
-}
-
 .beneficio {
   background-color: #ffffff;
   border: 1px solid #786e5c;
@@ -673,57 +754,112 @@ footer .logo-tagline {
   padding: 1.5rem;
 }
 
-.bloques-origenes {
-  background-color: #ffffff;
-  box-shadow: 0 4px 16px rgba(36, 20, 7, 0.1);
-  border-radius: 20px;
-  padding: 1.25rem;
+.timeline-origenes {
+  position: relative;
   display: flex;
   flex-direction: column;
-  gap: 0.625rem;
+  gap: 2rem;
 }
-.bloques-origenes h3 {
+.timeline-origenes::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 1.375rem;
+  width: 2px;
+  background-color: #e2ddd4;
+}
+@media (min-width: 768px) {
+  .timeline-origenes::before {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.timeline-origenes__item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 2.75rem 1fr;
+  column-gap: 1.25rem;
+  align-items: start;
+}
+@media (min-width: 768px) {
+  .timeline-origenes__item {
+    grid-template-columns: 1fr 2.75rem 1fr;
+    column-gap: 2rem;
+  }
+}
+
+.timeline-origenes__marcador {
+  position: relative;
+  z-index: 1;
+  grid-column: 1;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  background-color: #ffffff;
+  border: 2px solid #2f5c3b;
+  color: #2f5c3b;
+  font-family: "Oswald", sans-serif;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (min-width: 768px) {
+  .timeline-origenes__marcador {
+    grid-column: 2;
+  }
+}
+
+.timeline-origenes__contenido {
+  grid-column: 2;
+  background-color: #ffffff;
+  box-shadow: 0 4px 16px rgba(36, 20, 7, 0.15);
+  border-radius: 20px;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.timeline-origenes__contenido h3 {
   margin: 0;
   font-family: "Fraunces", serif;
   font-weight: 600;
-  font-size: 1.75rem;
-  line-height: 2.25rem;
+  font-size: 1.375rem;
   letter-spacing: -0.2px;
-  text-align: center;
 }
-.bloques-origenes__fila {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-}
-.bloques-origenes figure {
-  margin: 0;
-  width: 100%;
-  max-width: 233px;
-  flex-shrink: 0;
-}
-.bloques-origenes figure img {
-  display: block;
-  width: 100%;
-  height: 163px;
-  object-fit: cover;
-  border-radius: 22px;
-}
-.bloques-origenes p {
+.timeline-origenes__contenido p {
   margin: 0;
   font-family: "Work Sans", sans-serif;
-  font-size: 1rem;
+  font-size: 0.9375rem;
   line-height: 1.5rem;
+  color: #3b2415;
 }
 @media (min-width: 768px) {
-  .bloques-origenes__fila {
-    flex-direction: row;
-    align-items: center;
-    gap: 1.5rem;
+  .timeline-origenes__contenido {
+    grid-column: 3;
   }
-  .bloques-origenes figure {
-    width: 233px;
+}
+
+@media (min-width: 768px) {
+  .timeline-origenes__item--izq .timeline-origenes__contenido {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .timeline-origenes__item--izq .timeline-origenes__marcador {
+    grid-row: 1;
+  }
+}
+
+.origenes__cta {
+  align-self: center;
+  margin-top: 1.5rem;
+}
+@media (min-width: 768px) {
+  .origenes__cta {
+    margin-top: 2.5rem;
   }
 }
 
@@ -928,6 +1064,167 @@ footer .logo-tagline {
 
 .tipos-de-preparacion__descripcion {
   color: #786e5c;
+}
+
+.distribuidores {
+  gap: 1.25rem;
+}
+
+.distribuidores__buscador {
+  width: 100%;
+  max-width: 420px;
+}
+.distribuidores__buscador input[type=search] {
+  width: 100%;
+  height: 44px;
+  font-family: "Work Sans", sans-serif;
+  font-size: 0.9375rem;
+  color: #3b2415;
+  border: 1.5px solid #e2ddd4;
+  border-radius: 999px;
+  padding: 0 1.25rem;
+}
+.distribuidores__buscador input[type=search]:focus {
+  outline: none;
+  border-color: #2f5c3b;
+}
+
+.distribuidores__filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.625rem;
+}
+
+.chip-filtro {
+  transition: background-color 0.2s ease-out, color 0.2s ease-out;
+  display: inline-block;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 500;
+  font-size: 0.8125rem;
+  color: #2f5c3b;
+  background-color: #f6eee0;
+  border: 1px solid #2f5c3b;
+  border-radius: 999px;
+  padding: 0.375rem 1rem;
+  text-decoration: none;
+}
+.chip-filtro:hover, .chip-filtro:focus-visible {
+  background-color: #2f5c3b;
+  color: #fcf8f1;
+}
+
+.distribuidores__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+@media (min-width: 640px) {
+  .distribuidores__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1024px) {
+  .distribuidores__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.card-distribuidor {
+  background-color: #ffffff;
+  box-shadow: 0 4px 16px rgba(36, 20, 7, 0.1);
+  border-radius: 16px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+.card-distribuidor__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+.card-distribuidor__header h4 {
+  font-family: "Fraunces", serif;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #3b2415;
+}
+.card-distribuidor__region {
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: #2f5c3b;
+}
+.card-distribuidor__direccion {
+  font-size: 0.875rem;
+  color: #3b2415;
+}
+.card-distribuidor__horario {
+  font-size: 0.8125rem;
+  color: #786e5c;
+}
+
+.compromiso-ambiental {
+  background-color: #2f5c3b;
+  gap: 1.5rem;
+}
+.compromiso-ambiental__etiqueta {
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #fcf8f1;
+  margin: 0;
+}
+.compromiso-ambiental .titulos-secciones {
+  color: #fcf8f1;
+}
+
+.compromiso-ambiental__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+@media (min-width: 640px) {
+  .compromiso-ambiental__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1024px) {
+  .compromiso-ambiental__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.card-compromiso {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background-color: rgba(252, 248, 241, 0.06);
+  border-radius: 16px;
+  padding: 1.25rem;
+}
+.card-compromiso__etiqueta {
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: #fcf8f1;
+  margin: 0;
+}
+.card-compromiso h3 {
+  color: #fcf8f1;
+  font-size: 1.0625rem;
+}
+.card-compromiso p {
+  color: #fcf8f1;
+  opacity: 0.85;
+  font-size: 0.875rem;
 }
 
 .accordion-item {

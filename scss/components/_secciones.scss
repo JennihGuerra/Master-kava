@@ -3,8 +3,9 @@
 
 .xq-káva,
 .nuestra-filosofía,
-.experiencia-káva,
+.distribuidores,
 .origenes,
+.compromiso-ambiental,
 .tipos-de-preparacion,
 .coleccion-grupo,
 .coleccion-final,
@@ -23,9 +24,46 @@
   }
 }
 
+.nuestra-filosofía {
+  // Título y cita juntos en un mismo contenedor, centrados: se le suma el
+  // ancho máximo para que el bloque de texto no se estire de punta a punta
+  // en pantallas grandes y quede legible como una sola idea.
+  align-items: center;
+  text-align: center;
+
+  .titulos-secciones,
+  p {
+    max-width: 42rem;
+  }
+}
+
 .xq-káva {
+  // Mismo recurso que en el hero: gradiente semitransparente (65%) sobre
+  // una foto de fondo. Así se sigue viendo el verde de marca como color
+  // principal de la sección, pero se alcanza a apreciar la imagen debajo.
   background-color: $color-accent;
+  background-image: linear-gradient(rgba(47, 92, 59, 0.65), rgba(47, 92, 59, 0.65)),
+    url('../Assets/img/xq-kava-productos-sostenibles.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   gap: 1rem;
+  justify-content: center;
+
+  // Más alto que el resto de las secciones, para que la foto de fondo
+  // respire y se note mejor detrás del verde.
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+
+  @media (min-width: 768px) {
+    padding-top: 5.5rem;
+    padding-bottom: 5.5rem;
+  }
+
+  @media (min-width: 1024px) {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+  }
 
   .titulos-secciones {
     color: $color-text-inverse;
@@ -59,10 +97,6 @@
   margin-bottom: 0.25rem;
 }
 
-.experiencia-káva {
-  margin-bottom: 0;
-}
-
 .beneficio {
   @extend %hover-lift;
   background-color: $color-white;
@@ -71,68 +105,128 @@
   padding: 1.5rem;
 }
 
-// Bloques de "De la finca a tu taza" (Orígenes): título centrado arriba
-// y, debajo, una fila con la foto a la izquierda y el texto a la derecha.
-// En mobile la fila se apila (imagen arriba, texto abajo).
-.bloques-origenes {
-  @extend %hover-lift;
-  background-color: $color-white;
-  box-shadow: 0 4px 16px rgba(36, 20, 7, 0.1);
-  border-radius: 20px;
-  padding: 1.25rem;
+// "De la finca a tu taza" (Orígenes): sin color propio, toma el fondo
+// general de la página (el título ya viene oscuro por defecto).
+
+// Línea de tiempo numerada (01, 02, 03...) en zigzag: en desktop las
+// tarjetas alternan izquierda/derecha de una línea vertical central: en
+// mobile se apilan en una sola columna con la línea a la izquierda.
+.timeline-origenes {
+  position: relative;
   display: flex;
   flex-direction: column;
-  gap: 0.625rem;
+  gap: 2rem;
+
+  // La línea vertical: un solo elemento que atraviesa todos los items,
+  // no una por item, para que se vea continua.
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 1.375rem;
+    width: 2px;
+    background-color: $color-border-default;
+  }
+
+  @media (min-width: 768px) {
+    &::before {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}
+
+.timeline-origenes__item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 2.75rem 1fr;
+  column-gap: 1.25rem;
+  align-items: start;
+
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr 2.75rem 1fr;
+    column-gap: 2rem;
+  }
+}
+
+.timeline-origenes__marcador {
+  position: relative;
+  z-index: 1;
+  grid-column: 1;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  background-color: $color-white;
+  border: 2px solid $color-accent;
+  color: $color-accent;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (min-width: 768px) {
+    grid-column: 2;
+  }
+}
+
+.timeline-origenes__contenido {
+  grid-column: 2;
+  background-color: $color-white;
+  box-shadow: 0 4px 16px rgba(36, 20, 7, 0.15);
+  border-radius: 20px;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 
   h3 {
     margin: 0;
     font-family: 'Fraunces', serif;
     font-weight: 600;
-    font-size: 1.75rem;
-    line-height: 2.25rem;
+    font-size: 1.375rem;
     letter-spacing: -0.2px;
-    text-align: center;
-  }
-
-  &__fila {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-  }
-
-  figure {
-    margin: 0;
-    width: 100%;
-    max-width: 233px;
-    flex-shrink: 0;
-
-    img {
-      display: block;
-      width: 100%;
-      height: 163px;
-      object-fit: cover;
-      border-radius: 22px;
-    }
   }
 
   p {
     margin: 0;
     font-family: 'Work Sans', sans-serif;
-    font-size: 1rem;
+    font-size: 0.9375rem;
     line-height: 1.5rem;
+    color: $color-text;
   }
 
   @media (min-width: 768px) {
-    &__fila {
-      flex-direction: row;
-      align-items: center;
-      gap: 1.5rem;
+    grid-column: 3;
+  }
+}
+
+// En desktop, los items "izquierda" ponen la tarjeta en la primera
+// columna (a la izquierda de la línea) y dejan vacía la tercera.
+.timeline-origenes__item--izq {
+  @media (min-width: 768px) {
+    .timeline-origenes__contenido {
+      grid-column: 1;
+      grid-row: 1;
     }
 
-    figure {
-      width: 233px;
+    .timeline-origenes__marcador {
+      grid-row: 1;
     }
+  }
+}
+
+// Botón final de la línea de tiempo: separado del último item (no pegado)
+// y con su ancho natural en vez de estirarse a todo el ancho, ya que
+// %seccion-base es un flex column con align-items: stretch por defecto.
+.origenes__cta {
+  align-self: center;
+  margin-top: 1.5rem;
+
+  @media (min-width: 768px) {
+    margin-top: 2.5rem;
   }
 }
 
@@ -303,4 +397,195 @@
 
 .tipos-de-preparacion__descripcion {
   color: $color-text-muted;
+}
+
+// -----------------------------------------------------------------------
+// Distribuidores: buscador de tiendas Káva en Chile, agrupadas por región.
+// -----------------------------------------------------------------------
+.distribuidores {
+  gap: 1.25rem;
+}
+
+.distribuidores__buscador {
+  width: 100%;
+  max-width: 420px;
+
+  input[type='search'] {
+    width: 100%;
+    height: 44px;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 0.9375rem;
+    color: $color-primary;
+    border: 1.5px solid $color-border-default;
+    border-radius: 999px;
+    padding: 0 1.25rem;
+
+    &:focus {
+      outline: none;
+      border-color: $color-accent;
+    }
+  }
+}
+
+.distribuidores__filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.625rem;
+}
+
+.chip-filtro {
+  @include transicion((background-color, color), 0.2s, ease-out);
+  display: inline-block;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 500;
+  font-size: 0.8125rem;
+  color: $color-accent;
+  background-color: $color-bg-surface-alt;
+  border: 1px solid $color-accent;
+  border-radius: 999px;
+  padding: 0.375rem 1rem;
+  text-decoration: none;
+
+  &:hover,
+  &:focus-visible {
+    background-color: $color-accent;
+    color: $color-text-inverse;
+  }
+}
+
+// Sin agrupar por región (eso era para acompañar al mapa, que todavía no
+// tenemos): una sola grilla con las 7 tiendas, 4 arriba y 3 abajo en
+// desktop.
+.distribuidores__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+
+  @media (min-width: 640px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.card-distribuidor {
+  @extend %hover-lift;
+  background-color: $color-white;
+  // Sin borde: se distingue del fondo con sombra (mismo recurso que ya
+  // usamos en .bloques-origenes y .card-producto).
+  box-shadow: 0 4px 16px rgba(36, 20, 7, 0.1);
+  border-radius: 16px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+
+    h4 {
+      font-family: 'Fraunces', serif;
+      font-weight: 600;
+      font-size: 1rem;
+      color: $color-primary;
+    }
+  }
+
+  &__region {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    color: $color-accent;
+  }
+
+  &__direccion {
+    font-size: 0.875rem;
+    color: $color-text;
+  }
+
+  &__horario {
+    font-size: 0.8125rem;
+    color: $color-text-muted;
+  }
+}
+
+// -----------------------------------------------------------------------
+// Compromiso ambiental (página Orígenes): mismo recurso de "etiqueta +
+// título" que ya usamos en el hero, en el mismo verde de marca que
+// .xq-káva (no el marrón oscuro), pegada directo al hero de arriba.
+// -----------------------------------------------------------------------
+.compromiso-ambiental {
+  background-color: $color-accent;
+  gap: 1.5rem;
+
+  &__etiqueta {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    // $color-secondary no tiene suficiente contraste sobre este verde
+    // (4.37:1, por debajo del 4.5:1 mínimo AA) — mismo problema que ya
+    // resolvimos en .badge--sage, así que va en color-text-inverse.
+    color: $color-text-inverse;
+    margin: 0;
+  }
+
+  .titulos-secciones {
+    color: $color-text-inverse;
+  }
+}
+
+.compromiso-ambiental__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+
+  @media (min-width: 640px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.card-compromiso {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  // Panel apenas más claro que el fondo de la sección, para diferenciar
+  // la tarjeta sin salirse de la paleta (mismo recurso de superponer
+  // rgba() que ya usamos en los degradados de los heroes).
+  background-color: rgba(252, 248, 241, 0.06);
+  border-radius: 16px;
+  padding: 1.25rem;
+
+  &__etiqueta {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    color: $color-text-inverse;
+    margin: 0;
+  }
+
+  h3 {
+    color: $color-text-inverse;
+    font-size: 1.0625rem;
+  }
+
+  p {
+    color: $color-text-inverse;
+    opacity: 0.85;
+    font-size: 0.875rem;
+  }
 }
