@@ -338,7 +338,7 @@ footer .logo-tagline {
 }
 
 .hero-content {
-  background-image: linear-gradient(rgba(59, 36, 21, 0.55), rgba(59, 36, 21, 0.55)), url("../Assets/img/hero-cafe-molido.jpg");
+  background-image: linear-gradient(rgba(59, 36, 21, 0.55), rgba(59, 36, 21, 0.55)), url("../assets/img/hero-cafe-molido.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -367,10 +367,10 @@ footer .logo-tagline {
   animation-delay: 0.4s;
 }
 .hero-content.hero-productos {
-  background-image: linear-gradient(rgba(59, 36, 21, 0.55), rgba(59, 36, 21, 0.55)), url("../Assets/img/hero-nuestros-productos.jpg");
+  background-image: linear-gradient(rgba(59, 36, 21, 0.55), rgba(59, 36, 21, 0.55)), url("../assets/img/hero-nuestros-productos.jpg");
 }
 .hero-content.hero-origenes {
-  background-image: linear-gradient(rgba(59, 36, 21, 0.55), rgba(59, 36, 21, 0.55)), url("../Assets/img/hero-origenes.jpg");
+  background-image: linear-gradient(rgba(59, 36, 21, 0.55), rgba(59, 36, 21, 0.55)), url("../assets/img/hero-origenes.jpg");
 }
 .hero-content .cta-button-secundario {
   color: #fcf8f1;
@@ -432,13 +432,13 @@ footer .logo-tagline {
   margin-top: 1rem;
 }
 .hero-home--1 {
-  background-image: linear-gradient(rgba(59, 36, 21, 0.55), rgba(59, 36, 21, 0.55)), url("../Assets/img/hero-grupo-riendo.jpg");
+  background-image: linear-gradient(rgba(59, 36, 21, 0.55), rgba(59, 36, 21, 0.55)), url("../assets/img/hero-grupo-riendo.jpg");
 }
 .hero-home--2 {
-  background-image: linear-gradient(rgba(59, 36, 21, 0.55), rgba(59, 36, 21, 0.55)), url("../Assets/img/hero-brindis-cenital.jpg");
+  background-image: linear-gradient(rgba(59, 36, 21, 0.55), rgba(59, 36, 21, 0.55)), url("../assets/img/hero-brindis-cenital.jpg");
 }
 .hero-home--3 {
-  background-image: linear-gradient(rgba(59, 36, 21, 0.55), rgba(59, 36, 21, 0.55)), url("../Assets/img/hero-venta-cafe.jpg");
+  background-image: linear-gradient(rgba(59, 36, 21, 0.55), rgba(59, 36, 21, 0.55)), url("../assets/img/hero-venta-cafe.jpg");
 }
 
 #heroCarousel {
@@ -696,7 +696,7 @@ footer .logo-tagline {
 
 .xq-káva {
   background-color: #2f5c3b;
-  background-image: linear-gradient(rgba(47, 92, 59, 0.65), rgba(47, 92, 59, 0.65)), url("../Assets/img/xq-kava-productos-sostenibles.jpg");
+  background-image: linear-gradient(rgba(47, 92, 59, 0.65), rgba(47, 92, 59, 0.65)), url("../assets/img/xq-kava-productos-sostenibles.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -976,7 +976,7 @@ footer .logo-tagline {
   justify-content: center;
   gap: 2rem;
   padding: 2.5rem 2rem;
-  background-image: linear-gradient(rgba(59, 36, 21, 0.5), rgba(59, 36, 21, 0.5)), url("../Assets/img/hero-distribuidor-granos.jpg");
+  background-image: linear-gradient(rgba(59, 36, 21, 0.5), rgba(59, 36, 21, 0.5)), url("../assets/img/hero-distribuidor-granos.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
